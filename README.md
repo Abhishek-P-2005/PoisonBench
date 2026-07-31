@@ -1,4 +1,4 @@
-# poisonBench
+# PoisonBench
 
 An offline benchmark for studying retrieval corpus poisoning attacks and evaluating defence mechanisms in Retrieval-Augmented Generation (RAG) systems.
 
