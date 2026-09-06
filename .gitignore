@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/raw/*.json
+!data/raw/.gitkeep
+*.joblib
+*.pkl
+results/
+.ipynb_checkpoints/
+.pytest_cache/

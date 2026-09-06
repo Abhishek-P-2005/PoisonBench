@@ -1,0 +1,110 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: poisonbench-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: poisonbench
+      POSTGRES_PASSWORD: poisonbench
+      POSTGRES_DB: poisonbench
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U poisonbench"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: poisonbench-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  chromadb:
+    image: chromadb/chroma:1.5.9
+    container_name: poisonbench-chromadb
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      IS_PERSISTENT: "TRUE"
+      ANONYMIZED_TELEMETRY: "FALSE"
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: poisonbench-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # after `docker compose up -d`, run once:
+    # docker exec -it poisonbench-ollama ollama pull phi3:mini
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: poisonbench-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      CHROMA_HOST: chromadb
+      CHROMA_PORT: 8000
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: poisonbench
+      POSTGRES_USER: poisonbench
+      POSTGRES_PASSWORD: poisonbench
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      OLLAMA_HOST: ollama
+      OLLAMA_PORT: 11434
+      OLLAMA_MODEL: phi3:mini
+      EMBEDDING_MODEL_NAME: all-MiniLM-L6-v2
+    depends_on:
+      chromadb:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ollama:
+        condition: service_started
+    volumes:
+      - ./api:/app/api
+      - ./integration:/app/integration
+      - ./data:/app/data
+      - hf_cache:/root/.cache/huggingface
+
+  # frontend:
+  #   Placeholder for Abhishek's React attack-vs-defense dashboard (Phase built later).
+  #   Uncomment once the dashboard exists:
+  # frontend:
+  #   build: ./frontend
+  #   container_name: poisonbench-frontend
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - api
+
+volumes:
+  pg_data:
+  chroma_data:
+  ollama_data:
+  hf_cache:

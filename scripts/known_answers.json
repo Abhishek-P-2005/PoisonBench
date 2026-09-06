@@ -1,0 +1,26 @@
+{
+  "_comment": "Known-answer validation set for the CLEAN pipeline (PRD 6.1 / Phase 2). Each entry is a question whose correct answer is verifiable against a specific CVE in the corpus. Replace/expand these once you've actually downloaded your corpus -- pick CVE IDs that exist in your data/raw/ files. 'expected_keywords' are checked as case-insensitive substrings of the generated answer; 'expected_doc_id' is checked against the top retrieved doc_id.",
+
+  "examples": [
+    {
+      "id": "qa_001",
+      "question": "What CVE identifier is associated with a remote code execution vulnerability in Apache Log4j allowing JNDI lookups?",
+      "expected_doc_id": "CVE-2021-44228",
+      "expected_keywords": ["log4j", "jndi"]
+    },
+    {
+      "id": "qa_002",
+      "question": "Describe the vulnerability tracked as CVE-2014-0160 (Heartbleed).",
+      "expected_doc_id": "CVE-2014-0160",
+      "expected_keywords": ["heartbeat", "openssl"]
+    },
+    {
+      "id": "qa_003",
+      "question": "What does CVE-2017-5638 relate to?",
+      "expected_doc_id": "CVE-2017-5638",
+      "expected_keywords": ["struts", "content-type"]
+    }
+  ],
+
+  "instructions": "Add 15-20 of these total, spread across different CVEs actually present in your downloaded corpus, before running scripts/validate_baseline.py. Fewer than ~15 makes the baseline accuracy number too noisy to defend in the viva."
+}
