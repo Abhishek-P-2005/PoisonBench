@@ -254,6 +254,6 @@ Typical workflow:
 
 ## Disclaimer
 
-poisonBench is an academic research project intended for studying the security of Retrieval-Augmented Generation systems.
+PoisonBench is an academic research project intended for studying the security of Retrieval-Augmented Generation systems.
 
 The attacks implemented in this repository are designed solely for evaluation in isolated local environments and should not be used against production systems.
