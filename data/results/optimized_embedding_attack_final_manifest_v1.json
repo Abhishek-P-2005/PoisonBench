@@ -1,0 +1,41 @@
+{
+  "attack": "Optimization-Based Embedding Attack",
+  "attack_type": "optimization_embedding",
+  "status": "COMPLETE_AND_FROZEN",
+  "benchmark": {
+    "queries": 20,
+    "top_k": 5
+  },
+  "optimization": {
+    "poison_documents": 20,
+    "improved_documents": 20,
+    "mean_seed_similarity": 0.8312553644180298,
+    "mean_optimized_similarity": 0.8979544401168823,
+    "mean_absolute_improvement": 0.06669907569885254
+  },
+  "retrieval_evaluation": {
+    "api_errors": 0,
+    "poison_top5_hits": 20,
+    "poison_top5_asr": 1.0,
+    "poison_rank1_hits": 20,
+    "poison_rank1_asr": 1.0,
+    "poison_beats_legitimate_hits": 20,
+    "poison_beats_legitimate_rate": 1.0,
+    "legitimate_top5_recall": 1.0,
+    "legitimate_mrr_after_poisoning": 0.47916666666666663
+  },
+  "clean_reference": {
+    "top5_recall": 1.0,
+    "rank1_accuracy": 0.95,
+    "mrr": 0.9666666666666668
+  },
+  "artifacts": {
+    "optimized_poison_corpus": "data\\poisoned\\optimized_embedding_attack_real.jsonl",
+    "optimization_stats": "data\\poisoned\\optimized_embedding_attack_stats.jsonl",
+    "attack2_summary": "data\\results\\real_optimized_embedding_top5_v1_summary.json",
+    "attack_comparison": "data\\results\\attack1_vs_attack2_comparison_v1.csv",
+    "attack_comparison_summary": "data\\results\\attack1_vs_attack2_comparison_v1_summary.json",
+    "report_table": "data\\results\\attack1_vs_attack2_report_table_v1.csv",
+    "report_findings": "data\\results\\attack1_vs_attack2_report_findings_v1.json"
+  }
+}

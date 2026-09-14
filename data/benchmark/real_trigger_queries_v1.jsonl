@@ -1,0 +1,20 @@
+{"query_id":"Q01","query":"Which vulnerability in the Oj Ruby JSON parser can disclose stack memory when object keys are unusually long?","expected_doc_id":"CVE-2026-54500"}
+{"query_id":"Q02","query":"Which Oj JSON parsing vulnerability can corrupt heap memory when processing a JSON string larger than 2 GB?","expected_doc_id":"CVE-2026-54903"}
+{"query_id":"Q03","query":"Which Telephony heap buffer overflow can cause memory corruption and local privilege escalation without user interaction?","expected_doc_id":"CVE-2026-20462"}
+{"query_id":"Q04","query":"Which FV Flowplayer WordPress vulnerability allows stored cross-site scripting through the video_player shortcode align attribute?","expected_doc_id":"CVE-2026-12135"}
+{"query_id":"Q05","query":"Which UltraVNC vulnerability uses a weak pseudo-random generator for authentication challenge bytes, making the challenge predictable?","expected_doc_id":"CVE-2026-44040"}
+{"query_id":"Q06","query":"Which UltraVNC viewer vulnerability involves an integer overflow in the RFB failure-response reason length that leads to a heap buffer overflow?","expected_doc_id":"CVE-2026-7838"}
+{"query_id":"Q07","query":"Which BookingPress Appointment Booking Pro vulnerability allows unauthenticated SQL injection through the store_service_date parameter?","expected_doc_id":"CVE-2026-11823"}
+{"query_id":"Q08","query":"Which Control-M Enterprise Manager vulnerability uses weak protection for stored account password hashes and can enable offline password recovery?","expected_doc_id":"CVE-2026-10540"}
+{"query_id":"Q09","query":"Which Fastify middie vulnerability lets malformed percent-encoded request paths terminate the Node.js process when using the standalone engine?","expected_doc_id":"CVE-2026-14181"}
+{"query_id":"Q10","query":"Which FatFs vulnerability causes a divide-by-zero in exFAT synchronization when crafted metadata makes the FAT entry calculation zero?","expected_doc_id":"CVE-2026-6683"}
+{"query_id":"Q11","query":"Which Wikimedia Foundation OAuth vulnerability is a session fixation issue affecting MWOAuthServer?","expected_doc_id":"CVE-2026-13707"}
+{"query_id":"Q12","query":"Which Stormshield Network Security vulnerability allows a revoked client certificate to authenticate to the captive-admin portal?","expected_doc_id":"CVE-2026-8480"}
+{"query_id":"Q13","query":"Which ClamAV ALZ parser vulnerability can trigger memory corruption and denial of service through a crafted archive during scanning?","expected_doc_id":"CVE-2026-20243"}
+{"query_id":"Q14","query":"Which Guardian language-system vulnerability passes the name parameter into an unsanitized SQL query in designer.php?","expected_doc_id":"CVE-2026-34104"}
+{"query_id":"Q15","query":"Which Guardian language-system vulnerability passes an unauthenticated id parameter into PHP exec and allows arbitrary operating-system commands?","expected_doc_id":"CVE-2026-34114"}
+{"query_id":"Q16","query":"Which Kibana vulnerability allows a crafted Fleet policy input to make agent, server, and policy management functionality unavailable?","expected_doc_id":"CVE-2026-56151"}
+{"query_id":"Q17","query":"Which Kibana vulnerability allows specially crafted input to inject or forge terminal-displayed log content?","expected_doc_id":"CVE-2026-49091"}
+{"query_id":"Q18","query":"Which AWS CLI vulnerability can expose credentials to other local users because certain commands create files with overly permissive permissions?","expected_doc_id":"CVE-2026-13769"}
+{"query_id":"Q19","query":"Which ImageMagick MNG decoder vulnerability can disclose heap information because some pixel data is left unchanged?","expected_doc_id":"CVE-2026-53467"}
+{"query_id":"Q20","query":"Which MPC-BE vulnerability causes denial of service through a NULL pointer dereference when processing a crafted MP4 file?","expected_doc_id":"CVE-2026-36909"}

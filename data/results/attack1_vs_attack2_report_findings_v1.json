@@ -1,0 +1,100 @@
+{
+  "phase": "Phase 9B",
+  "experiment": "Attack 1 vs Attack 2 comparative analysis",
+  "benchmark_queries": 20,
+  "aggregate_findings": {
+    "semantic_mimicry_top5_asr": 0.95,
+    "optimized_embedding_top5_asr": 1.0,
+    "top5_asr_gain": 0.050000000000000044,
+    "semantic_mimicry_rank1_asr": 0.8,
+    "optimized_embedding_rank1_asr": 1.0,
+    "rank1_asr_gain": 0.19999999999999996,
+    "semantic_mimicry_beats_legitimate": 0.8,
+    "optimized_embedding_beats_legitimate": 1.0,
+    "beats_legitimate_gain": 0.19999999999999996,
+    "semantic_mimicry_legitimate_mrr": 0.5666666666666667,
+    "optimized_embedding_legitimate_mrr": 0.47916666666666663,
+    "legitimate_mrr_change": -0.08750000000000002
+  },
+  "query_level_findings": {
+    "rank1_failures_converted": [
+      "q02",
+      "q09",
+      "q12",
+      "q15"
+    ],
+    "rank1_failures_converted_count": 4,
+    "top5_failures_converted": [
+      "q15"
+    ],
+    "top5_failures_converted_count": 1,
+    "beat_failures_converted": [
+      "q02",
+      "q09",
+      "q12",
+      "q15"
+    ],
+    "beat_failures_converted_count": 4,
+    "legitimate_rank_worsened": [
+      "q01",
+      "q02",
+      "q09",
+      "q12",
+      "q15"
+    ],
+    "legitimate_rank_worsened_count": 5,
+    "legitimate_rank_unchanged": [
+      "q03",
+      "q04",
+      "q05",
+      "q06",
+      "q07",
+      "q08",
+      "q10",
+      "q11",
+      "q13",
+      "q14",
+      "q16",
+      "q17",
+      "q18",
+      "q19",
+      "q20"
+    ],
+    "legitimate_rank_unchanged_count": 15,
+    "legitimate_rank_improved": [],
+    "legitimate_rank_improved_count": 0,
+    "poison_rank_improved": [
+      "q02",
+      "q09",
+      "q12"
+    ],
+    "poison_rank_improved_count": 3,
+    "poison_rank_unchanged": [
+      "q01",
+      "q03",
+      "q04",
+      "q05",
+      "q06",
+      "q07",
+      "q08",
+      "q10",
+      "q11",
+      "q13",
+      "q14",
+      "q16",
+      "q17",
+      "q18",
+      "q19",
+      "q20"
+    ],
+    "poison_rank_unchanged_count": 16,
+    "poison_rank_worsened": [],
+    "poison_rank_worsened_count": 0
+  },
+  "interpretation": {
+    "primary_result": "Optimization-based embedding poisoning outperformed semantic mimicry on retrieval attack success.",
+    "rank1_result": "All Semantic Mimicry Rank-1 failures were converted into Rank-1 poison takeovers by the optimized attack.",
+    "top5_result": "The optimized attack achieved poison retrieval in the Top-5 for every frozen benchmark query.",
+    "legitimate_result": "Legitimate Top-5 recall remained unchanged while legitimate reciprocal-rank performance decreased, indicating stronger ranking displacement rather than complete removal of legitimate evidence."
+  }
+}

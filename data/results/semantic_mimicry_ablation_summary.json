@@ -1,0 +1,71 @@
+{
+  "benchmark": "data\\benchmark\\real_trigger_queries_v1.jsonl",
+  "attack_file": "data\\poisoned\\semantic_mimicry_real.jsonl",
+  "top_k_values": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "results": {
+    "1": {
+      "top_k": 1,
+      "queries": 20,
+      "poison_hits": 16,
+      "poison_retrieval_asr": 0.8,
+      "poison_rank1_hits": 16,
+      "poison_rank1_asr": 0.8,
+      "poison_beats_legitimate_hits": 16,
+      "poison_beats_legitimate_rate": 0.8,
+      "legitimate_hits": 3,
+      "legitimate_recall": 0.15,
+      "legitimate_mrr": 0.15
+    },
+    "3": {
+      "top_k": 3,
+      "queries": 20,
+      "poison_hits": 19,
+      "poison_retrieval_asr": 0.95,
+      "poison_rank1_hits": 16,
+      "poison_rank1_asr": 0.8,
+      "poison_beats_legitimate_hits": 16,
+      "poison_beats_legitimate_rate": 0.8,
+      "legitimate_hits": 20,
+      "legitimate_recall": 1.0,
+      "legitimate_mrr": 0.5666666666666667
+    },
+    "5": {
+      "top_k": 5,
+      "queries": 20,
+      "poison_hits": 19,
+      "poison_retrieval_asr": 0.95,
+      "poison_rank1_hits": 16,
+      "poison_rank1_asr": 0.8,
+      "poison_beats_legitimate_hits": 16,
+      "poison_beats_legitimate_rate": 0.8,
+      "legitimate_hits": 20,
+      "legitimate_recall": 1.0,
+      "legitimate_mrr": 0.5666666666666667
+    },
+    "10": {
+      "top_k": 10,
+      "queries": 20,
+      "poison_hits": 20,
+      "poison_retrieval_asr": 1.0,
+      "poison_rank1_hits": 16,
+      "poison_rank1_asr": 0.8,
+      "poison_beats_legitimate_hits": 16,
+      "poison_beats_legitimate_rate": 0.8,
+      "legitimate_hits": 20,
+      "legitimate_recall": 1.0,
+      "legitimate_mrr": 0.5666666666666667
+    }
+  },
+  "frozen_top5_reference": {
+    "poison_top5_asr": 0.95,
+    "poison_rank1_asr": 0.8,
+    "poison_beats_legitimate_rate": 0.8,
+    "legitimate_top5_recall": 1.0,
+    "legitimate_mrr": 0.05666666666666667
+  }
+}

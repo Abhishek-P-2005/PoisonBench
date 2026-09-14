@@ -1,0 +1,22 @@
+{
+  "benchmark": "data\\benchmark\\real_trigger_queries_v1.jsonl",
+  "attack_file": "data\\poisoned\\optimized_embedding_attack_real.jsonl",
+  "attack_type": "optimization_embedding",
+  "queries": 20,
+  "top_k": 5,
+  "api_errors": 0,
+  "poison_top5_hits": 20,
+  "poison_top5_asr": 1.0,
+  "poison_rank1_hits": 20,
+  "poison_rank1_asr": 1.0,
+  "poison_beats_legitimate_hits": 20,
+  "poison_beats_legitimate_rate": 1.0,
+  "legitimate_top5_hits": 20,
+  "legitimate_top5_recall": 1.0,
+  "legitimate_mrr_after_poisoning": 0.47916666666666663,
+  "clean_reference": {
+    "top5_recall": 1.0,
+    "rank1_accuracy": 0.95,
+    "mrr": 0.9666666666666668
+  }
+}

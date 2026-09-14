@@ -1,0 +1,92 @@
+{
+  "phase": "Phase 9A",
+  "comparison": "Semantic Mimicry vs Optimization-Based Embedding",
+  "queries": 20,
+  "attack1": {
+    "name": "Semantic Mimicry",
+    "queries": 20,
+    "poison_top5_hits": 19,
+    "poison_top5_asr": 0.95,
+    "poison_rank1_hits": 16,
+    "poison_rank1_asr": 0.8,
+    "poison_beats_legitimate_hits": 16,
+    "poison_beats_legitimate_rate": 0.8,
+    "legitimate_top5_hits": 20,
+    "legitimate_top5_recall": 1.0,
+    "legitimate_mrr": 0.5666666666666667,
+    "mean_legitimate_rank": 1.9,
+    "mean_poison_rank": 1.1578947368421053
+  },
+  "attack2": {
+    "name": "Optimization-Based Embedding",
+    "queries": 20,
+    "poison_top5_hits": 20,
+    "poison_top5_asr": 1.0,
+    "poison_rank1_hits": 20,
+    "poison_rank1_asr": 1.0,
+    "poison_beats_legitimate_hits": 20,
+    "poison_beats_legitimate_rate": 1.0,
+    "legitimate_top5_hits": 20,
+    "legitimate_top5_recall": 1.0,
+    "legitimate_mrr": 0.47916666666666663,
+    "mean_legitimate_rank": 2.15,
+    "mean_poison_rank": 1.0
+  },
+  "attack2_minus_attack1": {
+    "poison_top5_asr_change": 0.050000000000000044,
+    "poison_rank1_asr_change": 0.19999999999999996,
+    "poison_beats_legitimate_rate_change": 0.19999999999999996,
+    "legitimate_top5_recall_change": 0.0,
+    "legitimate_mrr_change": -0.08750000000000002
+  },
+  "query_level_transitions": {
+    "rank1_failures_converted_count": 4,
+    "rank1_failures_converted_queries": [
+      "q02",
+      "q09",
+      "q12",
+      "q15"
+    ],
+    "top5_failures_converted_count": 1,
+    "top5_failures_converted_queries": [
+      "q15"
+    ],
+    "beat_failures_converted_count": 4,
+    "beat_failures_converted_queries": [
+      "q02",
+      "q09",
+      "q12",
+      "q15"
+    ]
+  },
+  "legitimate_document_rank_effect": {
+    "rank_worsened_count": 5,
+    "rank_worsened_queries": [
+      "q01",
+      "q02",
+      "q09",
+      "q12",
+      "q15"
+    ],
+    "rank_unchanged_count": 15,
+    "rank_unchanged_queries": [
+      "q03",
+      "q04",
+      "q05",
+      "q06",
+      "q07",
+      "q08",
+      "q10",
+      "q11",
+      "q13",
+      "q14",
+      "q16",
+      "q17",
+      "q18",
+      "q19",
+      "q20"
+    ],
+    "rank_improved_count": 0,
+    "rank_improved_queries": []
+  }
+}
