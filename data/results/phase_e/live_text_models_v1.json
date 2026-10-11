@@ -1,0 +1,110 @@
+{
+  "schema": "phase_e_live_text_models_v1",
+  "purpose": "Separate deployment-compatible, six-text-feature models; frozen Phase C/D comparison untouched",
+  "dataset_sha256": "d4f0aeb73eb6236c9de15780b571ff3f088d2f7761b0af617f9f7b6f932fe0bf",
+  "split_manifest_sha256": "349aec00334a341509fb69cb9b157495a7b36f27a379eb11c6e45a8880db0343",
+  "seed": 42,
+  "feature_columns": [
+    "text_length_chars",
+    "text_length_words",
+    "avg_word_length",
+    "char_entropy",
+    "digit_ratio",
+    "punctuation_ratio"
+  ],
+  "feature_generator": "defenses.defense4_xgboost.feature_engineering.text_stat_features",
+  "split": {
+    "train": 416,
+    "train_after_smote": 478,
+    "test": 137,
+    "train_clean": 239,
+    "train_poison": 177,
+    "test_clean": 77,
+    "test_poison": 60
+  },
+  "threshold": 0.5,
+  "metrics": {
+    "random_forest": {
+      "precision": 0.9272727272727272,
+      "recall": 0.85,
+      "f1": 0.8869565217391304,
+      "roc_auc": 0.9707792207792207,
+      "pr_auc_average_precision": 0.9583053808473299,
+      "confusion_matrix": [
+        [
+          73,
+          4
+        ],
+        [
+          9,
+          51
+        ]
+      ],
+      "false_positive_rate": 0.05194805194805195,
+      "per_attack": {
+        "sm": {
+          "detected": 16,
+          "total_poison": 20
+        },
+        "obea": {
+          "detected": 16,
+          "total_poison": 20
+        },
+        "rpi": {
+          "detected": 19,
+          "total_poison": 20
+        }
+      }
+    },
+    "xgboost": {
+      "precision": 0.9361702127659575,
+      "recall": 0.7333333333333333,
+      "f1": 0.822429906542056,
+      "roc_auc": 0.9614718614718615,
+      "pr_auc_average_precision": 0.9448741756297881,
+      "confusion_matrix": [
+        [
+          74,
+          3
+        ],
+        [
+          16,
+          44
+        ]
+      ],
+      "false_positive_rate": 0.03896103896103896,
+      "per_attack": {
+        "sm": {
+          "detected": 14,
+          "total_poison": 20
+        },
+        "obea": {
+          "detected": 12,
+          "total_poison": 20
+        },
+        "rpi": {
+          "detected": 18,
+          "total_poison": 20
+        }
+      }
+    }
+  },
+  "models": {
+    "random_forest": "data/results/phase_e/random_forest_live_text_v1.joblib",
+    "xgboost": "data/results/phase_e/xgboost_live_text_v1.joblib"
+  },
+  "predictions_csv": "data/results/phase_e/live_text_test_predictions_v1.csv",
+  "sha256": {
+    "rf_model": "18216806c7e44ddd829afc67b1fde78604ad0aaad78f18aedfe04f727a2ac146",
+    "xgb_model": "46afe8296a612e0e2871fc6bf949ba90fe63d50e3f7edc913f6018dd2524b479",
+    "predictions": "f10f52dc004e50154982492c89acbd28af62feb7a46571458849dd3c602d7147"
+  },
+  "limitations": [
+    "Experimental separately trained models; not the original 12-feature Phase C/D models.",
+    "Six numerical text features only; no corpus centroid, retrieval history, source metadata or labels used at inference.",
+    "Training data from synthetic 20%-ratio SM/OBEA/RPI experiments; generalization beyond benchmark unknown.",
+    "Potential text artifacts from synthetic attack generation can inflate held-out scores.",
+    "No generation, live retrieval, or D1/D2/D3 filtering evaluated by this training run.",
+    "Threshold fixed at 0.5 without held-out tuning."
+  ]
+}

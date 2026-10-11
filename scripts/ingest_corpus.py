@@ -69,7 +69,7 @@ def main():
 
     all_docs = []
     for f in raw_files:
-        with open(f) as fh:
+        with open(f, "r", encoding="utf-8") as fh:
             page = json.load(fh)
         all_docs.extend(extract_documents_from_page(page))
 

@@ -1,0 +1,2042 @@
+{
+  "phase": "B2B",
+  "ratio_target_pct": 20,
+  "ratio_definition": "poison chunks/(316 clean NVD chunks+poison chunks)",
+  "clean_chunks": 316,
+  "poison_chunks": 79,
+  "final_chunks": 395,
+  "achieved_ratio_pct": 20.0,
+  "frozen_base_count_per_attack": 20,
+  "extra_variant_count_per_attack": 59,
+  "targeted_query_count": 20,
+  "selection_seed": 42,
+  "selection_order": [
+    "q20",
+    "q06",
+    "q15",
+    "q05",
+    "q10",
+    "q14",
+    "q16",
+    "q19",
+    "q07",
+    "q13",
+    "q18",
+    "q11",
+    "q02",
+    "q12",
+    "q03",
+    "q17",
+    "q08",
+    "q09",
+    "q01",
+    "q04"
+  ],
+  "extra_slots": [
+    [
+      "q20",
+      2
+    ],
+    [
+      "q06",
+      2
+    ],
+    [
+      "q15",
+      2
+    ],
+    [
+      "q05",
+      2
+    ],
+    [
+      "q10",
+      2
+    ],
+    [
+      "q14",
+      2
+    ],
+    [
+      "q16",
+      2
+    ],
+    [
+      "q19",
+      2
+    ],
+    [
+      "q07",
+      2
+    ],
+    [
+      "q13",
+      2
+    ],
+    [
+      "q18",
+      2
+    ],
+    [
+      "q11",
+      2
+    ],
+    [
+      "q02",
+      2
+    ],
+    [
+      "q12",
+      2
+    ],
+    [
+      "q03",
+      2
+    ],
+    [
+      "q17",
+      2
+    ],
+    [
+      "q08",
+      2
+    ],
+    [
+      "q09",
+      2
+    ],
+    [
+      "q01",
+      2
+    ],
+    [
+      "q04",
+      2
+    ],
+    [
+      "q20",
+      3
+    ],
+    [
+      "q06",
+      3
+    ],
+    [
+      "q15",
+      3
+    ],
+    [
+      "q05",
+      3
+    ],
+    [
+      "q10",
+      3
+    ],
+    [
+      "q14",
+      3
+    ],
+    [
+      "q16",
+      3
+    ],
+    [
+      "q19",
+      3
+    ],
+    [
+      "q07",
+      3
+    ],
+    [
+      "q13",
+      3
+    ],
+    [
+      "q18",
+      3
+    ],
+    [
+      "q11",
+      3
+    ],
+    [
+      "q02",
+      3
+    ],
+    [
+      "q12",
+      3
+    ],
+    [
+      "q03",
+      3
+    ],
+    [
+      "q17",
+      3
+    ],
+    [
+      "q08",
+      3
+    ],
+    [
+      "q09",
+      3
+    ],
+    [
+      "q01",
+      3
+    ],
+    [
+      "q04",
+      3
+    ],
+    [
+      "q20",
+      4
+    ],
+    [
+      "q06",
+      4
+    ],
+    [
+      "q15",
+      4
+    ],
+    [
+      "q05",
+      4
+    ],
+    [
+      "q10",
+      4
+    ],
+    [
+      "q14",
+      4
+    ],
+    [
+      "q16",
+      4
+    ],
+    [
+      "q19",
+      4
+    ],
+    [
+      "q07",
+      4
+    ],
+    [
+      "q13",
+      4
+    ],
+    [
+      "q18",
+      4
+    ],
+    [
+      "q11",
+      4
+    ],
+    [
+      "q02",
+      4
+    ],
+    [
+      "q12",
+      4
+    ],
+    [
+      "q03",
+      4
+    ],
+    [
+      "q17",
+      4
+    ],
+    [
+      "q08",
+      4
+    ],
+    [
+      "q09",
+      4
+    ],
+    [
+      "q01",
+      4
+    ]
+  ],
+  "nested_within_20_pct": false,
+  "generation_methods": {
+    "SM": "controlled query-relevant mutation of original frozen SM seed",
+    "OBEA": "independent 8-round, 12-candidate MiniLM cosine optimizer from original frozen SM seed",
+    "RPI": "controlled rephrased RPI instruction retaining the original marker and SM CVE context"
+  },
+  "datasets": {
+    "SM": {
+      "path": "data/poisoned/phase_b/phase_b_sm_20pct_v1.jsonl",
+      "sha256": "50bf09560cad6049dfe0f0df292ea710ac585fdef1c8b2becee33c76adad8f1c",
+      "poison_documents": 79,
+      "doc_ids": [
+        "POISON-SM-q20",
+        "POISON-SM-q06",
+        "POISON-SM-q15",
+        "POISON-SM-q05",
+        "POISON-SM-q10",
+        "POISON-SM-q14",
+        "POISON-SM-q16",
+        "POISON-SM-q19",
+        "POISON-SM-q07",
+        "POISON-SM-q13",
+        "POISON-SM-q18",
+        "POISON-SM-q11",
+        "POISON-SM-q02",
+        "POISON-SM-q12",
+        "POISON-SM-q03",
+        "POISON-SM-q17",
+        "POISON-SM-q08",
+        "POISON-SM-q09",
+        "POISON-SM-q01",
+        "POISON-SM-q04",
+        "POISON-SM-q20-v02",
+        "POISON-SM-q06-v02",
+        "POISON-SM-q15-v02",
+        "POISON-SM-q05-v02",
+        "POISON-SM-q10-v02",
+        "POISON-SM-q14-v02",
+        "POISON-SM-q16-v02",
+        "POISON-SM-q19-v02",
+        "POISON-SM-q07-v02",
+        "POISON-SM-q13-v02",
+        "POISON-SM-q18-v02",
+        "POISON-SM-q11-v02",
+        "POISON-SM-q02-v02",
+        "POISON-SM-q12-v02",
+        "POISON-SM-q03-v02",
+        "POISON-SM-q17-v02",
+        "POISON-SM-q08-v02",
+        "POISON-SM-q09-v02",
+        "POISON-SM-q01-v02",
+        "POISON-SM-q04-v02",
+        "POISON-SM-q20-v03",
+        "POISON-SM-q06-v03",
+        "POISON-SM-q15-v03",
+        "POISON-SM-q05-v03",
+        "POISON-SM-q10-v03",
+        "POISON-SM-q14-v03",
+        "POISON-SM-q16-v03",
+        "POISON-SM-q19-v03",
+        "POISON-SM-q07-v03",
+        "POISON-SM-q13-v03",
+        "POISON-SM-q18-v03",
+        "POISON-SM-q11-v03",
+        "POISON-SM-q02-v03",
+        "POISON-SM-q12-v03",
+        "POISON-SM-q03-v03",
+        "POISON-SM-q17-v03",
+        "POISON-SM-q08-v03",
+        "POISON-SM-q09-v03",
+        "POISON-SM-q01-v03",
+        "POISON-SM-q04-v03",
+        "POISON-SM-q20-v04",
+        "POISON-SM-q06-v04",
+        "POISON-SM-q15-v04",
+        "POISON-SM-q05-v04",
+        "POISON-SM-q10-v04",
+        "POISON-SM-q14-v04",
+        "POISON-SM-q16-v04",
+        "POISON-SM-q19-v04",
+        "POISON-SM-q07-v04",
+        "POISON-SM-q13-v04",
+        "POISON-SM-q18-v04",
+        "POISON-SM-q11-v04",
+        "POISON-SM-q02-v04",
+        "POISON-SM-q12-v04",
+        "POISON-SM-q03-v04",
+        "POISON-SM-q17-v04",
+        "POISON-SM-q08-v04",
+        "POISON-SM-q09-v04",
+        "POISON-SM-q01-v04"
+      ],
+      "extra_variants": [
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-SM-q20-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q20",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-SM-q06-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q06",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-SM-q15-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q15",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-SM-q05-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q05",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-SM-q10-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q10",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-SM-q14-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q14",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-SM-q16-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q16",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-SM-q19-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q19",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-SM-q07-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q07",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-SM-q13-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q13",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-SM-q18-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q18",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-SM-q11-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q11",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-SM-q02-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q02",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-SM-q12-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q12",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-SM-q03-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q03",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-SM-q17-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q17",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-SM-q08-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q08",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-SM-q09-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q09",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-SM-q01-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q01",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q04",
+          "doc_id": "POISON-SM-q04-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-SM-q04",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-SM-q20-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q20",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-SM-q06-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q06",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-SM-q15-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q15",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-SM-q05-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q05",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-SM-q10-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q10",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-SM-q14-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q14",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-SM-q16-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q16",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-SM-q19-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q19",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-SM-q07-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q07",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-SM-q13-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q13",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-SM-q18-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q18",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-SM-q11-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q11",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-SM-q02-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q02",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-SM-q12-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q12",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-SM-q03-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q03",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-SM-q17-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q17",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-SM-q08-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q08",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-SM-q09-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q09",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-SM-q01-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q01",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q04",
+          "doc_id": "POISON-SM-q04-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-SM-q04",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-SM-q20-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q20",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-SM-q06-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q06",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-SM-q15-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q15",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-SM-q05-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q05",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-SM-q10-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q10",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-SM-q14-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q14",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-SM-q16-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q16",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-SM-q19-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q19",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-SM-q07-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q07",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-SM-q13-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q13",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-SM-q18-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q18",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-SM-q11-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q11",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-SM-q02-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q02",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-SM-q12-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q12",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-SM-q03-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q03",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-SM-q17-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q17",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-SM-q08-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q08",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-SM-q09-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q09",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-SM-q01-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-SM-q01",
+          "variant_method": "query_relevant_semantic_mutation_from_frozen_sm"
+        }
+      ]
+    },
+    "OBEA": {
+      "path": "data/poisoned/phase_b/phase_b_obea_20pct_v1.jsonl",
+      "sha256": "105dba169c916ddb8a0626680459779660365aa82894aef23ba37cf9b4b5ab97",
+      "poison_documents": 79,
+      "doc_ids": [
+        "POISON-OBEA-q20",
+        "POISON-OBEA-q06",
+        "POISON-OBEA-q15",
+        "POISON-OBEA-q05",
+        "POISON-OBEA-q10",
+        "POISON-OBEA-q14",
+        "POISON-OBEA-q16",
+        "POISON-OBEA-q19",
+        "POISON-OBEA-q07",
+        "POISON-OBEA-q13",
+        "POISON-OBEA-q18",
+        "POISON-OBEA-q11",
+        "POISON-OBEA-q02",
+        "POISON-OBEA-q12",
+        "POISON-OBEA-q03",
+        "POISON-OBEA-q17",
+        "POISON-OBEA-q08",
+        "POISON-OBEA-q09",
+        "POISON-OBEA-q01",
+        "POISON-OBEA-q04",
+        "POISON-OBEA-q20-v02",
+        "POISON-OBEA-q06-v02",
+        "POISON-OBEA-q15-v02",
+        "POISON-OBEA-q05-v02",
+        "POISON-OBEA-q10-v02",
+        "POISON-OBEA-q14-v02",
+        "POISON-OBEA-q16-v02",
+        "POISON-OBEA-q19-v02",
+        "POISON-OBEA-q07-v02",
+        "POISON-OBEA-q13-v02",
+        "POISON-OBEA-q18-v02",
+        "POISON-OBEA-q11-v02",
+        "POISON-OBEA-q02-v02",
+        "POISON-OBEA-q12-v02",
+        "POISON-OBEA-q03-v02",
+        "POISON-OBEA-q17-v02",
+        "POISON-OBEA-q08-v02",
+        "POISON-OBEA-q09-v02",
+        "POISON-OBEA-q01-v02",
+        "POISON-OBEA-q04-v02",
+        "POISON-OBEA-q20-v03",
+        "POISON-OBEA-q06-v03",
+        "POISON-OBEA-q15-v03",
+        "POISON-OBEA-q05-v03",
+        "POISON-OBEA-q10-v03",
+        "POISON-OBEA-q14-v03",
+        "POISON-OBEA-q16-v03",
+        "POISON-OBEA-q19-v03",
+        "POISON-OBEA-q07-v03",
+        "POISON-OBEA-q13-v03",
+        "POISON-OBEA-q18-v03",
+        "POISON-OBEA-q11-v03",
+        "POISON-OBEA-q02-v03",
+        "POISON-OBEA-q12-v03",
+        "POISON-OBEA-q03-v03",
+        "POISON-OBEA-q17-v03",
+        "POISON-OBEA-q08-v03",
+        "POISON-OBEA-q09-v03",
+        "POISON-OBEA-q01-v03",
+        "POISON-OBEA-q04-v03",
+        "POISON-OBEA-q20-v04",
+        "POISON-OBEA-q06-v04",
+        "POISON-OBEA-q15-v04",
+        "POISON-OBEA-q05-v04",
+        "POISON-OBEA-q10-v04",
+        "POISON-OBEA-q14-v04",
+        "POISON-OBEA-q16-v04",
+        "POISON-OBEA-q19-v04",
+        "POISON-OBEA-q07-v04",
+        "POISON-OBEA-q13-v04",
+        "POISON-OBEA-q18-v04",
+        "POISON-OBEA-q11-v04",
+        "POISON-OBEA-q02-v04",
+        "POISON-OBEA-q12-v04",
+        "POISON-OBEA-q03-v04",
+        "POISON-OBEA-q17-v04",
+        "POISON-OBEA-q08-v04",
+        "POISON-OBEA-q09-v04",
+        "POISON-OBEA-q01-v04"
+      ],
+      "extra_variants": [
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-OBEA-q20-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q20",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 42020,
+          "seed_similarity": 0.8081821203231812,
+          "optimized_similarity": 0.8901931047439575,
+          "improvement": 0.08201098442077637
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-OBEA-q06-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q06",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 181994,
+          "seed_similarity": 0.8680574893951416,
+          "optimized_similarity": 0.9344804883003235,
+          "improvement": 0.06642299890518188
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-OBEA-q15-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q15",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 271994,
+          "seed_similarity": 0.7351208925247192,
+          "optimized_similarity": 0.8801950812339783,
+          "improvement": 0.14507418870925903
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-OBEA-q05-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q05",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 171994,
+          "seed_similarity": 0.8678405284881592,
+          "optimized_similarity": 0.931032657623291,
+          "improvement": 0.06319212913513184
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-OBEA-q10-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q10",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 221994,
+          "seed_similarity": 0.8378808498382568,
+          "optimized_similarity": 0.911517322063446,
+          "improvement": 0.07363647222518921
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-OBEA-q14-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q14",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 261994,
+          "seed_similarity": 0.8365523815155029,
+          "optimized_similarity": 0.9373090863227844,
+          "improvement": 0.1007567048072815
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-OBEA-q16-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q16",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 281994,
+          "seed_similarity": 0.8159669637680054,
+          "optimized_similarity": 0.8707202076911926,
+          "improvement": 0.054753243923187256
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-OBEA-q19-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q19",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 311994,
+          "seed_similarity": 0.9067840576171875,
+          "optimized_similarity": 0.9286014437675476,
+          "improvement": 0.021817386150360107
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-OBEA-q07-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q07",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 191994,
+          "seed_similarity": 0.8641418218612671,
+          "optimized_similarity": 0.9174667596817017,
+          "improvement": 0.05332493782043457
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-OBEA-q13-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q13",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 251994,
+          "seed_similarity": 0.8371515274047852,
+          "optimized_similarity": 0.8895359039306641,
+          "improvement": 0.052384376525878906
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-OBEA-q18-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q18",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 301994,
+          "seed_similarity": 0.8231528997421265,
+          "optimized_similarity": 0.8729662299156189,
+          "improvement": 0.04981333017349243
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-OBEA-q11-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q11",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 231994,
+          "seed_similarity": 0.9099709987640381,
+          "optimized_similarity": 0.9502263069152832,
+          "improvement": 0.04025530815124512
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-OBEA-q02-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q02",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 141994,
+          "seed_similarity": 0.7133086919784546,
+          "optimized_similarity": 0.8050912618637085,
+          "improvement": 0.0917825698852539
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-OBEA-q12-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q12",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 241994,
+          "seed_similarity": 0.8697258830070496,
+          "optimized_similarity": 0.9403388500213623,
+          "improvement": 0.07061296701431274
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-OBEA-q03-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q03",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 151994,
+          "seed_similarity": 0.7443135976791382,
+          "optimized_similarity": 0.8210787773132324,
+          "improvement": 0.07676517963409424
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-OBEA-q17-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q17",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 291994,
+          "seed_similarity": 0.8294436931610107,
+          "optimized_similarity": 0.9388319849967957,
+          "improvement": 0.10938829183578491
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-OBEA-q08-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q08",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 201994,
+          "seed_similarity": 0.8623835444450378,
+          "optimized_similarity": 0.8903065919876099,
+          "improvement": 0.02792304754257202
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-OBEA-q09-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q09",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 211994,
+          "seed_similarity": 0.7873280048370361,
+          "optimized_similarity": 0.8799005746841431,
+          "improvement": 0.09257256984710693
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-OBEA-q01-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q01",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 131994,
+          "seed_similarity": 0.8040850162506104,
+          "optimized_similarity": 0.9114402532577515,
+          "improvement": 0.10735523700714111
+        },
+        {
+          "query_id": "q04",
+          "doc_id": "POISON-OBEA-q04-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-OBEA-q04",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 161994,
+          "seed_similarity": 0.9037163257598877,
+          "optimized_similarity": 0.9264016151428223,
+          "improvement": 0.02268528938293457
+        },
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-OBEA-q20-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q20",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 322991,
+          "seed_similarity": 0.8081821203231812,
+          "optimized_similarity": 0.897000789642334,
+          "improvement": 0.08881866931915283
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-OBEA-q06-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q06",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 182991,
+          "seed_similarity": 0.8680574893951416,
+          "optimized_similarity": 0.9306670427322388,
+          "improvement": 0.06260955333709717
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-OBEA-q15-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q15",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 272991,
+          "seed_similarity": 0.7351208925247192,
+          "optimized_similarity": 0.8889020085334778,
+          "improvement": 0.15378111600875854
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-OBEA-q05-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q05",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 172991,
+          "seed_similarity": 0.8678405284881592,
+          "optimized_similarity": 0.933950662612915,
+          "improvement": 0.06611013412475586
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-OBEA-q10-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q10",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 222991,
+          "seed_similarity": 0.8378808498382568,
+          "optimized_similarity": 0.8982093334197998,
+          "improvement": 0.06032848358154297
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-OBEA-q14-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q14",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 262991,
+          "seed_similarity": 0.8365523815155029,
+          "optimized_similarity": 0.9398945569992065,
+          "improvement": 0.10334217548370361
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-OBEA-q16-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q16",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 282991,
+          "seed_similarity": 0.8159669637680054,
+          "optimized_similarity": 0.8837482929229736,
+          "improvement": 0.06778132915496826
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-OBEA-q19-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q19",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 312991,
+          "seed_similarity": 0.9067840576171875,
+          "optimized_similarity": 0.9154950380325317,
+          "improvement": 0.008710980415344238
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-OBEA-q07-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q07",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 192991,
+          "seed_similarity": 0.8641418218612671,
+          "optimized_similarity": 0.9113395810127258,
+          "improvement": 0.04719775915145874
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-OBEA-q13-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q13",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 252991,
+          "seed_similarity": 0.8371515274047852,
+          "optimized_similarity": 0.8866350650787354,
+          "improvement": 0.049483537673950195
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-OBEA-q18-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q18",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 302991,
+          "seed_similarity": 0.8231528997421265,
+          "optimized_similarity": 0.8836523294448853,
+          "improvement": 0.06049942970275879
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-OBEA-q11-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q11",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 232991,
+          "seed_similarity": 0.9099709987640381,
+          "optimized_similarity": 0.9472148418426514,
+          "improvement": 0.03724384307861328
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-OBEA-q02-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q02",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 142991,
+          "seed_similarity": 0.7133086919784546,
+          "optimized_similarity": 0.7891345620155334,
+          "improvement": 0.07582587003707886
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-OBEA-q12-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q12",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 242991,
+          "seed_similarity": 0.8697258830070496,
+          "optimized_similarity": 0.9359501600265503,
+          "improvement": 0.06622427701950073
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-OBEA-q03-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q03",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 152991,
+          "seed_similarity": 0.7443135976791382,
+          "optimized_similarity": 0.849098801612854,
+          "improvement": 0.10478520393371582
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-OBEA-q17-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q17",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 292991,
+          "seed_similarity": 0.8294436931610107,
+          "optimized_similarity": 0.9320480823516846,
+          "improvement": 0.10260438919067383
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-OBEA-q08-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q08",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 202991,
+          "seed_similarity": 0.8623835444450378,
+          "optimized_similarity": 0.8833588361740112,
+          "improvement": 0.02097529172897339
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-OBEA-q09-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q09",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 212991,
+          "seed_similarity": 0.7873280048370361,
+          "optimized_similarity": 0.8849540948867798,
+          "improvement": 0.09762609004974365
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-OBEA-q01-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q01",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 132991,
+          "seed_similarity": 0.8040850162506104,
+          "optimized_similarity": 0.9125446677207947,
+          "improvement": 0.10845965147018433
+        },
+        {
+          "query_id": "q04",
+          "doc_id": "POISON-OBEA-q04-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-OBEA-q04",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 162991,
+          "seed_similarity": 0.9037163257598877,
+          "optimized_similarity": 0.912047266960144,
+          "improvement": 0.008330941200256348
+        },
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-OBEA-q20-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q20",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 323988,
+          "seed_similarity": 0.8081821203231812,
+          "optimized_similarity": 0.8897101879119873,
+          "improvement": 0.08152806758880615
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-OBEA-q06-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q06",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 183988,
+          "seed_similarity": 0.8680574893951416,
+          "optimized_similarity": 0.9293264150619507,
+          "improvement": 0.06126892566680908
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-OBEA-q15-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q15",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 273988,
+          "seed_similarity": 0.7351208925247192,
+          "optimized_similarity": 0.8796495199203491,
+          "improvement": 0.14452862739562988
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-OBEA-q05-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q05",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 173988,
+          "seed_similarity": 0.8678405284881592,
+          "optimized_similarity": 0.9295551776885986,
+          "improvement": 0.06171464920043945
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-OBEA-q10-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q10",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 223988,
+          "seed_similarity": 0.8378808498382568,
+          "optimized_similarity": 0.8925224542617798,
+          "improvement": 0.05464160442352295
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-OBEA-q14-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q14",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 263988,
+          "seed_similarity": 0.8365523815155029,
+          "optimized_similarity": 0.9256398677825928,
+          "improvement": 0.08908748626708984
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-OBEA-q16-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q16",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 283988,
+          "seed_similarity": 0.8159669637680054,
+          "optimized_similarity": 0.8836548328399658,
+          "improvement": 0.06768786907196045
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-OBEA-q19-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q19",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 313988,
+          "seed_similarity": 0.9067840576171875,
+          "optimized_similarity": 0.929783821105957,
+          "improvement": 0.02299976348876953
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-OBEA-q07-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q07",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 193988,
+          "seed_similarity": 0.8641418218612671,
+          "optimized_similarity": 0.9084162712097168,
+          "improvement": 0.04427444934844971
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-OBEA-q13-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q13",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 253988,
+          "seed_similarity": 0.8371515274047852,
+          "optimized_similarity": 0.8957960605621338,
+          "improvement": 0.05864453315734863
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-OBEA-q18-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q18",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 303988,
+          "seed_similarity": 0.8231528997421265,
+          "optimized_similarity": 0.8704213500022888,
+          "improvement": 0.047268450260162354
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-OBEA-q11-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q11",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 233988,
+          "seed_similarity": 0.9099709987640381,
+          "optimized_similarity": 0.9522008895874023,
+          "improvement": 0.04222989082336426
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-OBEA-q02-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q02",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 143988,
+          "seed_similarity": 0.7133086919784546,
+          "optimized_similarity": 0.8005886077880859,
+          "improvement": 0.08727991580963135
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-OBEA-q12-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q12",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 243988,
+          "seed_similarity": 0.8697258830070496,
+          "optimized_similarity": 0.9399831295013428,
+          "improvement": 0.07025724649429321
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-OBEA-q03-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q03",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 153988,
+          "seed_similarity": 0.7443135976791382,
+          "optimized_similarity": 0.8335521221160889,
+          "improvement": 0.08923852443695068
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-OBEA-q17-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q17",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 293988,
+          "seed_similarity": 0.8294436931610107,
+          "optimized_similarity": 0.9126246571540833,
+          "improvement": 0.08318096399307251
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-OBEA-q08-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q08",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 203988,
+          "seed_similarity": 0.8623835444450378,
+          "optimized_similarity": 0.8944334387779236,
+          "improvement": 0.03204989433288574
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-OBEA-q09-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q09",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 213988,
+          "seed_similarity": 0.7873280048370361,
+          "optimized_similarity": 0.8865822553634644,
+          "improvement": 0.09925425052642822
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-OBEA-q01-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-OBEA-q01",
+          "variant_method": "independent_eight_round_minilm_cosine_optimization",
+          "optimization_seed": 133988,
+          "seed_similarity": 0.8040850162506104,
+          "optimized_similarity": 0.9270484447479248,
+          "improvement": 0.12296342849731445
+        }
+      ]
+    },
+    "RPI": {
+      "path": "data/poisoned/phase_b/phase_b_rpi_20pct_v1.jsonl",
+      "sha256": "115ceea050528cd3b03b38a2dd9aefdc28704a131da1f855933e3d0afd6b26a2",
+      "poison_documents": 79,
+      "doc_ids": [
+        "POISON-RPI-q20",
+        "POISON-RPI-q06",
+        "POISON-RPI-q15",
+        "POISON-RPI-q05",
+        "POISON-RPI-q10",
+        "POISON-RPI-q14",
+        "POISON-RPI-q16",
+        "POISON-RPI-q19",
+        "POISON-RPI-q07",
+        "POISON-RPI-q13",
+        "POISON-RPI-q18",
+        "POISON-RPI-q11",
+        "POISON-RPI-q02",
+        "POISON-RPI-q12",
+        "POISON-RPI-q03",
+        "POISON-RPI-q17",
+        "POISON-RPI-q08",
+        "POISON-RPI-q09",
+        "POISON-RPI-q01",
+        "POISON-RPI-q04",
+        "POISON-RPI-q20-v02",
+        "POISON-RPI-q06-v02",
+        "POISON-RPI-q15-v02",
+        "POISON-RPI-q05-v02",
+        "POISON-RPI-q10-v02",
+        "POISON-RPI-q14-v02",
+        "POISON-RPI-q16-v02",
+        "POISON-RPI-q19-v02",
+        "POISON-RPI-q07-v02",
+        "POISON-RPI-q13-v02",
+        "POISON-RPI-q18-v02",
+        "POISON-RPI-q11-v02",
+        "POISON-RPI-q02-v02",
+        "POISON-RPI-q12-v02",
+        "POISON-RPI-q03-v02",
+        "POISON-RPI-q17-v02",
+        "POISON-RPI-q08-v02",
+        "POISON-RPI-q09-v02",
+        "POISON-RPI-q01-v02",
+        "POISON-RPI-q04-v02",
+        "POISON-RPI-q20-v03",
+        "POISON-RPI-q06-v03",
+        "POISON-RPI-q15-v03",
+        "POISON-RPI-q05-v03",
+        "POISON-RPI-q10-v03",
+        "POISON-RPI-q14-v03",
+        "POISON-RPI-q16-v03",
+        "POISON-RPI-q19-v03",
+        "POISON-RPI-q07-v03",
+        "POISON-RPI-q13-v03",
+        "POISON-RPI-q18-v03",
+        "POISON-RPI-q11-v03",
+        "POISON-RPI-q02-v03",
+        "POISON-RPI-q12-v03",
+        "POISON-RPI-q03-v03",
+        "POISON-RPI-q17-v03",
+        "POISON-RPI-q08-v03",
+        "POISON-RPI-q09-v03",
+        "POISON-RPI-q01-v03",
+        "POISON-RPI-q04-v03",
+        "POISON-RPI-q20-v04",
+        "POISON-RPI-q06-v04",
+        "POISON-RPI-q15-v04",
+        "POISON-RPI-q05-v04",
+        "POISON-RPI-q10-v04",
+        "POISON-RPI-q14-v04",
+        "POISON-RPI-q16-v04",
+        "POISON-RPI-q19-v04",
+        "POISON-RPI-q07-v04",
+        "POISON-RPI-q13-v04",
+        "POISON-RPI-q18-v04",
+        "POISON-RPI-q11-v04",
+        "POISON-RPI-q02-v04",
+        "POISON-RPI-q12-v04",
+        "POISON-RPI-q03-v04",
+        "POISON-RPI-q17-v04",
+        "POISON-RPI-q08-v04",
+        "POISON-RPI-q09-v04",
+        "POISON-RPI-q01-v04"
+      ],
+      "extra_variants": [
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-RPI-q20-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q20",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-RPI-q06-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q06",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-RPI-q15-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q15",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-RPI-q05-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q05",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-RPI-q10-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q10",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-RPI-q14-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q14",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-RPI-q16-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q16",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-RPI-q19-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q19",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-RPI-q07-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q07",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-RPI-q13-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q13",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-RPI-q18-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q18",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-RPI-q11-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q11",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-RPI-q02-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q02",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-RPI-q12-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q12",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-RPI-q03-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q03",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-RPI-q17-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q17",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-RPI-q08-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q08",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-RPI-q09-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q09",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-RPI-q01-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q01",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q04",
+          "doc_id": "POISON-RPI-q04-v02",
+          "variant_index": 2,
+          "variant_of": "POISON-RPI-q04",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-RPI-q20-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q20",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-RPI-q06-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q06",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-RPI-q15-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q15",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-RPI-q05-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q05",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-RPI-q10-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q10",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-RPI-q14-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q14",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-RPI-q16-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q16",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-RPI-q19-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q19",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-RPI-q07-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q07",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-RPI-q13-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q13",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-RPI-q18-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q18",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-RPI-q11-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q11",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-RPI-q02-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q02",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-RPI-q12-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q12",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-RPI-q03-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q03",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-RPI-q17-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q17",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-RPI-q08-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q08",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-RPI-q09-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q09",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-RPI-q01-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q01",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q04",
+          "doc_id": "POISON-RPI-q04-v03",
+          "variant_index": 3,
+          "variant_of": "POISON-RPI-q04",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q20",
+          "doc_id": "POISON-RPI-q20-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q20",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q06",
+          "doc_id": "POISON-RPI-q06-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q06",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q15",
+          "doc_id": "POISON-RPI-q15-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q15",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q05",
+          "doc_id": "POISON-RPI-q05-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q05",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q10",
+          "doc_id": "POISON-RPI-q10-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q10",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q14",
+          "doc_id": "POISON-RPI-q14-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q14",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q16",
+          "doc_id": "POISON-RPI-q16-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q16",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q19",
+          "doc_id": "POISON-RPI-q19-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q19",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q07",
+          "doc_id": "POISON-RPI-q07-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q07",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q13",
+          "doc_id": "POISON-RPI-q13-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q13",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q18",
+          "doc_id": "POISON-RPI-q18-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q18",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q11",
+          "doc_id": "POISON-RPI-q11-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q11",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q02",
+          "doc_id": "POISON-RPI-q02-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q02",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q12",
+          "doc_id": "POISON-RPI-q12-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q12",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q03",
+          "doc_id": "POISON-RPI-q03-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q03",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q17",
+          "doc_id": "POISON-RPI-q17-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q17",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q08",
+          "doc_id": "POISON-RPI-q08-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q08",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q09",
+          "doc_id": "POISON-RPI-q09-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q09",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        },
+        {
+          "query_id": "q01",
+          "doc_id": "POISON-RPI-q01-v04",
+          "variant_index": 4,
+          "variant_of": "POISON-RPI-q01",
+          "variant_method": "controlled_instruction_rephrasing_same_marker"
+        }
+      ]
+    }
+  },
+  "input_sha256": {
+    "data/benchmark/real_trigger_queries_v1.jsonl": "925bbefee0b9ea7c1b1143c08c285a9e6a864611a43b760dbb2ebfd56fb8605b",
+    "data/poisoned/semantic_mimicry_real.jsonl": "088ac9a681763413119a7cbb692a4599dd5819d2be84ffbf770d8cd657c42602",
+    "data/poisoned/optimized_embedding_attack_real.jsonl": "f5cc0b71fdca571ab4ef274548604e47a4ea7f6546ff41287c57760d44ada771",
+    "data/poisoned/retrieved_prompt_injection_real.jsonl": "21941bd84b241fa53f14a1edfe5ce4b5f2f2e7b5acc4323bb9ed574bb7ce79db",
+    "scripts/build_optimized_embedding_real.py": "10fd51606461cc9e4462f197e312ef3b62a8a748a68283395d4961530c2e6064",
+    "data/poisoned/phase_b/phase_b_1pct_5pct_allocation_v1.json": "54613a8c90fe2e2614f49be95dcb1c0f5065f40f4ddd4ad75f2f824f16663ae9",
+    "data/poisoned/phase_b/pilots/phase_b_q20_variant_pilot_v1.json": "2b56ff9950b11b030284fc54cd2b1fe62f7513aa5565377c56aabd2d491bde08",
+    "data/poisoned/phase_b/pilots/phase_b_sm_q20_v02_pilot.jsonl": "5b7f322726172dcac3cf36e1de33f8cee6265f50b523cb0a48caaa9a9d4609e1",
+    "data/poisoned/phase_b/pilots/phase_b_obea_q20_v02_pilot.jsonl": "11283e85626a74c5ea1e64c3ec5cb9e74a703c5434541525e29eb266df8a6187",
+    "data/poisoned/phase_b/pilots/phase_b_rpi_q20_v02_pilot.jsonl": "75f46770e209c02911352f014c4fca5efbacc7482a28442458302df972a69fb7",
+    "data/poisoned/phase_b/phase_b_sm_10pct_v1.jsonl": "ad693ed9ca79f5d415cd16c7cdee6998b077d2b285bd8cf64cb681a5926e51ef",
+    "data/poisoned/phase_b/phase_b_obea_10pct_v1.jsonl": "8f8197325e673e620503c4410ee5d709e530d5fffe6d4a18e0109bc0cee48363",
+    "data/poisoned/phase_b/phase_b_rpi_10pct_v1.jsonl": "0790b0666e919d749156db9064bec0f534ff375ad1d80c0a1021a47cbbd13de3",
+    "data/poisoned/phase_b/phase_b_10pct_allocation_v1.json": "1d75f9f7eb79dca09e381ef18f3ab91061939d79f6538f0114a5fc7b81e4b484"
+  },
+  "limitations": [
+    "Documents are distinct exact texts, but may be semantically near duplicates; saturation effects must be reported.",
+    "Optimization improvement is relative to the SM seed, not proof of better retrieval than frozen OBEA.",
+    "Higher ratios combine per-target variant multiplicity and possible retrieval saturation.",
+    "No ingestion or attack evaluation is performed by this builder."
+  ]
+}
