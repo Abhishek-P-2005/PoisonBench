@@ -11,11 +11,13 @@ an earlier one already dropped it in "hard filter" mode) -- if the team
 decides to test a different order, change DEFENSE_ORDER here and note it
 explicitly in the results section, don't silently reorder.
 
-This module currently ships with a NoOpDefense placeholder for Defenses
-1-3 (Akilan's work, not yet built) and a real wrapper around Defense 4
-(XGBoost, Subash's work) -- see DEFENSE_REGISTRY below. Swap the placeholders
-for real implementations as they land; nothing else in this file should need
-to change, that's the point of coding against integration/interfaces.py.
+Defenses 1-3 are Akilan's real implementations, wrapped by
+HarnessStageDefense around evaluation/stages.py (the same code the evaluation
+harness and the /defended/* API endpoints run). Defense 4 is Subash's XGBoost
+wrapper. NoOpDefense is kept only as a stand-in for tests.
+
+For the full defended path (10 candidates with embeddings, router, logging) use
+api/pipeline/defended.py; this orchestrator is the simpler top-k path.
 """
 import sys
 import time
@@ -28,6 +30,7 @@ from api.pipeline.vectorstore import query as vs_query, upsert_chunks   # noqa: 
 from api.pipeline.llm import generate_answer                             # noqa: E402
 from api.pipeline.chunking import chunk_text                             # noqa: E402
 from integration.interfaces import Defense, RetrievedChunk, DefenseVerdict  # noqa: E402
+from evaluation.stages import D1Stage, D2Stage, D3Stage                    # noqa: E402
 
 DEFENSE_ORDER = ["outlier", "trust_rerank", "provenance", "xgboost"]
 
@@ -47,6 +50,52 @@ class NoOpDefense(Defense):
     def score(self, chunks: list[RetrievedChunk]) -> list[DefenseVerdict]:
         return [
             DefenseVerdict(chunk_id=c.chunk_id, flagged=False, score=0.0, latency_ms=0.0)
+            for c in chunks
+        ]
+
+
+class HarnessStageDefense(Defense):
+    """
+    Runs one real stage from evaluation/stages.py behind the Defense interface.
+
+    vs_query() returns no embeddings or provenance fields, so the adapter
+    embeds the chunk texts and, for provenance-based stages, derives the
+    missing fields with evaluation.metadata_bridge.enrich_metadata (labelled
+    "derived": see that module for what it does and does not prove).
+    Ground-truth labels are removed before the stage sees a chunk.
+
+    flag_on="blocked": a chunk is flagged (and so removed by this orchestrator)
+    only if the stage hard-blocks it. flag_on="flagged": any flag removes it.
+    """
+
+    def __init__(self, name: str, stage_factory, needs_provenance: bool = False, flag_on: str = "blocked"):
+        self.name = name
+        self.stage_factory = stage_factory
+        self.needs_provenance = needs_provenance
+        self.flag_on = flag_on
+
+    def score(self, chunks: list[RetrievedChunk]) -> list[DefenseVerdict]:
+        if not chunks:
+            return []
+        from api.pipeline.embedding import embed_texts
+        from evaluation.metadata_bridge import enrich_metadata
+
+        t0 = time.time()
+        vectors = embed_texts([c.text for c in chunks])
+        batch = []
+        for c, vec in zip(chunks, vectors):
+            meta = {k: v for k, v in c.metadata.items() if k not in ("is_poisoned", "attack_type")}
+            if self.needs_provenance:
+                meta = enrich_metadata(c.chunk_id, c.text, meta)
+            batch.append({"chunk_id": c.chunk_id, "text": c.text, "similarity": c.similarity_score,
+                          "metadata": meta, "embedding": vec})
+
+        out = self.stage_factory().run(batch)
+        removed = {b["chunk_id"] for b in out.blocked} if self.flag_on == "blocked" else set(out.flagged_ids)
+        ms = (time.time() - t0) * 1000 / len(chunks)
+        return [
+            DefenseVerdict(chunk_id=c.chunk_id, flagged=c.chunk_id in removed,
+                           score=float(out.suspicion.get(c.chunk_id, 0.0)), latency_ms=ms)
             for c in chunks
         ]
 
@@ -105,9 +154,9 @@ class XGBoostDefense(Defense):
 
 
 DEFENSE_REGISTRY: dict[str, Defense] = {
-    "outlier": NoOpDefense("outlier"),          # TODO(Akilan): replace with real Defense 1
-    "trust_rerank": NoOpDefense("trust_rerank"),  # TODO(Akilan): replace with real Defense 2
-    "provenance": NoOpDefense("provenance"),     # TODO(Akilan): replace with real Defense 3
+    "outlier": HarnessStageDefense("outlier", D1Stage),                                        # Defense 1
+    "trust_rerank": HarnessStageDefense("trust_rerank", D2Stage, True, flag_on="flagged"),     # Defense 2
+    "provenance": HarnessStageDefense("provenance", D3Stage, True),                            # Defense 3
     "xgboost": XGBoostDefense(),                 # real, Subash
 }
 
@@ -189,7 +238,7 @@ if __name__ == "__main__":
     # and at least one document ingested.
     result = run_query_through_defenses(
         "What is a remote code execution vulnerability?", top_k=5,
-        defenses_enabled=["xgboost"],  # only xgboost has a real implementation so far
+        defenses_enabled=["outlier", "trust_rerank", "provenance"],  # xgboost needs a trained model
     )
     print(f"Query: {result['query']}")
     print(f"Chunks before defense: {len(result['pre_defense_chunks'])}")

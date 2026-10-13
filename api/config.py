@@ -40,6 +40,14 @@ class Settings(BaseSettings):
     # Retrieval
     default_top_k: int = 5
 
+    # Defended path (api/pipeline/defended.py)
+    # provenance: auto | thin | stored | derived  (see evaluation/metadata_bridge.py)
+    defended_provenance: str = "derived"
+    # Defense 4 model: random_forest | xgboost | none (live-text models in data/results/phase_e)
+    d4_model: str = "random_forest"
+    defended_log_enabled: bool = True
+    eval_db_url: str = ""   # empty -> built from the postgres_* settings below
+
     class Config:
         env_file = ".env"
         extra = "ignore"
@@ -50,6 +58,15 @@ class Settings(BaseSettings):
             f"host={self.postgres_host} port={self.postgres_port} "
             f"dbname={self.postgres_db} user={self.postgres_user} "
             f"password={self.postgres_password}"
+        )
+
+    @property
+    def eval_db_dsn(self) -> str:
+        if self.eval_db_url:
+            return self.eval_db_url
+        return (
+            f"postgresql://{self.postgres_user}:{self.postgres_password}"
+            f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
         )
 
     @property

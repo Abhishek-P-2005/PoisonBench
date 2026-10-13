@@ -132,3 +132,37 @@ def reset_collection():
     except Exception:
         pass
     return get_collection()
+
+
+def query_candidates(query_text: str, n_results: int = 10, collection_name: str | None = None) -> list[dict]:
+    """
+    Retrieval for the defended path. Same search as query(), but returns the
+    shape Defenses 1-3 and the evaluation harness expect:
+        {chunk_id, text, similarity, metadata, embedding}
+    Embeddings are included (Defense 1 needs them) and converted to plain lists.
+    `collection_name` targets another existing collection (e.g. a Phase-B
+    poisoned one); None uses the configured collection.
+    """
+    if collection_name:
+        collection = get_client().get_collection(name=collection_name)
+    else:
+        collection = get_collection()
+    query_vec = embed_texts([query_text])[0]
+    res = collection.query(
+        query_embeddings=[query_vec],
+        n_results=n_results,
+        include=["documents", "metadatas", "distances", "embeddings"],
+    )
+    candidates = []
+    for chunk_id, text, meta, dist, emb in zip(
+        res["ids"][0], res["documents"][0], res["metadatas"][0],
+        res["distances"][0], res["embeddings"][0],
+    ):
+        candidates.append({
+            "chunk_id": chunk_id,
+            "text": text,
+            "similarity": 1.0 - dist,
+            "metadata": dict(meta or {}),
+            "embedding": [float(x) for x in emb],
+        })
+    return candidates

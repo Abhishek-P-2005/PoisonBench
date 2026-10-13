@@ -15,6 +15,12 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # so /app must be the import root, not /app itself flattened.
 COPY api/ /app/api/
 COPY integration/ /app/integration/
+# Defended path imports these packages (api/pipeline/defended.py). The D4 live-text
+# models are read from /app/data/results/phase_e, which compose mounts from ./data.
+COPY defenses/ /app/defenses/
+COPY evaluation/ /app/evaluation/
+COPY optimization_layer/ /app/optimization_layer/
+COPY corpus/ /app/corpus/
 
 ENV PYTHONPATH=/app
 EXPOSE 8000

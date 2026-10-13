@@ -13,7 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
-      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/eval_schema.sql:/docker-entrypoint-initdb.d/01_eval_schema.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U poisonbench"]
       interval: 5s
@@ -77,6 +77,8 @@ services:
       OLLAMA_PORT: 11434
       OLLAMA_MODEL: phi3:mini
       EMBEDDING_MODEL_NAME: all-MiniLM-L6-v2
+      DEFENDED_PROVENANCE: derived
+      D4_MODEL: random_forest
     depends_on:
       chromadb:
         condition: service_started
@@ -89,16 +91,20 @@ services:
     volumes:
       - ./api:/app/api
       - ./integration:/app/integration
+      - ./defenses:/app/defenses
+      - ./evaluation:/app/evaluation
+      - ./optimization_layer:/app/optimization_layer
+      - ./corpus:/app/corpus
       - ./data:/app/data
       - hf_cache:/root/.cache/huggingface
 
-frontend:
-  build: ./frontend
-  container_name: poisonbench-frontend
-  ports:
-    - "3000:3000"
-  depends_on:
-    - api
+  frontend:
+    build: ./frontend
+    container_name: poisonbench-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
 
 volumes:
   pg_data:

@@ -61,7 +61,7 @@ def test_chunk_id_format_is_stable():
 
 
 def test_text_stat_features_shape():
-    from defense4_xgboost.feature_engineering import text_stat_features
+    from defenses.defense4_xgboost.feature_engineering import text_stat_features
     feats = text_stat_features("Hello world, this is a test sentence with numb3rs 123.")
     expected_keys = {
         "text_length_chars", "text_length_words", "avg_word_length",
@@ -73,7 +73,7 @@ def test_text_stat_features_shape():
 
 def test_smote_falls_back_on_tiny_minority():
     import pandas as pd
-    from defense4_xgboost.smote_utils import apply_smote
+    from defenses.defense4_xgboost.smote_utils import apply_smote
 
     X = pd.DataFrame({"f1": range(20), "f2": range(20)})
     y = pd.Series([0] * 19 + [1])  # only 1 minority sample
