@@ -1,0 +1,1409 @@
+{
+  "queries": 100,
+  "poison_top5_asr": 1.0,
+  "poison_rank1_takeover": 1.0,
+  "legitimate_recall_at_5": 1.0,
+  "legitimate_mrr_at_5": 0.5,
+  "details": [
+    {
+      "query_id": "q001",
+      "expected_doc_id": "CVE-2002-0241",
+      "poison_doc_id": "POISON-OBEA-q001",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q001",
+        "CVE-2002-0241",
+        "CVE-2001-1233",
+        "CVE-1999-1020",
+        "CVE-2000-1056"
+      ]
+    },
+    {
+      "query_id": "q002",
+      "expected_doc_id": "CVE-1999-1041",
+      "poison_doc_id": "POISON-OBEA-q002",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q002",
+        "CVE-1999-1041",
+        "CVE-1999-1185",
+        "CVE-2001-1148",
+        "CVE-1999-0845"
+      ]
+    },
+    {
+      "query_id": "q003",
+      "expected_doc_id": "CVE-2000-0526",
+      "poison_doc_id": "POISON-OBEA-q003",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q003",
+        "CVE-2000-0526",
+        "CVE-2000-0977",
+        "CVE-1999-0174",
+        "CVE-2000-0527"
+      ]
+    },
+    {
+      "query_id": "q004",
+      "expected_doc_id": "CVE-2000-1100",
+      "poison_doc_id": "POISON-OBEA-q004",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q004",
+        "CVE-2000-1100",
+        "CVE-2000-0348",
+        "CVE-2002-0388",
+        "CVE-1999-1506"
+      ]
+    },
+    {
+      "query_id": "q005",
+      "expected_doc_id": "CVE-2000-0376",
+      "poison_doc_id": "POISON-OBEA-q005",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q005",
+        "CVE-2000-0376",
+        "CVE-1999-1149",
+        "CVE-2002-0289",
+        "CVE-2001-0285"
+      ]
+    },
+    {
+      "query_id": "q006",
+      "expected_doc_id": "CVE-2001-0925",
+      "poison_doc_id": "POISON-OBEA-q006",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q006",
+        "CVE-2001-0925",
+        "CVE-2001-0729",
+        "CVE-2001-0731",
+        "CVE-2001-1449"
+      ]
+    },
+    {
+      "query_id": "q007",
+      "expected_doc_id": "CVE-2000-0246",
+      "poison_doc_id": "POISON-OBEA-q007",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q007",
+        "CVE-2000-0246",
+        "CVE-2000-0025",
+        "CVE-2001-0004",
+        "POISON-OBEA-q054"
+      ]
+    },
+    {
+      "query_id": "q008",
+      "expected_doc_id": "CVE-1999-1083",
+      "poison_doc_id": "POISON-OBEA-q008",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q008",
+        "CVE-1999-1083",
+        "CVE-1999-1082",
+        "CVE-2002-0312",
+        "CVE-2001-0186"
+      ]
+    },
+    {
+      "query_id": "q009",
+      "expected_doc_id": "CVE-2002-0068",
+      "poison_doc_id": "POISON-OBEA-q009",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q009",
+        "CVE-2002-0068",
+        "CVE-2001-0843",
+        "CVE-2002-0713",
+        "CVE-2002-0163"
+      ]
+    },
+    {
+      "query_id": "q010",
+      "expected_doc_id": "CVE-2001-0049",
+      "poison_doc_id": "POISON-OBEA-q010",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q010",
+        "CVE-2001-0049",
+        "CVE-2002-0527",
+        "CVE-2000-0896",
+        "CVE-2000-0895"
+      ]
+    },
+    {
+      "query_id": "q011",
+      "expected_doc_id": "CVE-2002-0483",
+      "poison_doc_id": "POISON-OBEA-q011",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q011",
+        "CVE-2002-0483",
+        "CVE-2002-0206",
+        "CVE-2002-0240",
+        "CVE-2001-1025"
+      ]
+    },
+    {
+      "query_id": "q012",
+      "expected_doc_id": "CVE-2000-0549",
+      "poison_doc_id": "POISON-OBEA-q012",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q012",
+        "CVE-2000-0549",
+        "CVE-2000-0548",
+        "CVE-2000-0547",
+        "CVE-2000-0546"
+      ]
+    },
+    {
+      "query_id": "q013",
+      "expected_doc_id": "CVE-2001-0497",
+      "poison_doc_id": "POISON-OBEA-q013",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q013",
+        "CVE-2001-0497",
+        "CVE-1999-0010",
+        "CVE-1999-0184",
+        "CVE-1999-0011"
+      ]
+    },
+    {
+      "query_id": "q014",
+      "expected_doc_id": "CVE-2000-1207",
+      "poison_doc_id": "POISON-OBEA-q014",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q014",
+        "CVE-2000-1207",
+        "CVE-2000-0052",
+        "CVE-2001-0193",
+        "CVE-2000-0959"
+      ]
+    },
+    {
+      "query_id": "q015",
+      "expected_doc_id": "CVE-2000-0759",
+      "poison_doc_id": "POISON-OBEA-q015",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q015",
+        "CVE-2000-0759",
+        "CVE-2001-0917",
+        "CVE-2000-0760",
+        "CVE-2001-0590"
+      ]
+    },
+    {
+      "query_id": "q016",
+      "expected_doc_id": "CVE-2001-0451",
+      "poison_doc_id": "POISON-OBEA-q016",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q016",
+        "CVE-2001-0451",
+        "CVE-2001-0851",
+        "CVE-2002-0522",
+        "CVE-2002-0097"
+      ]
+    },
+    {
+      "query_id": "q017",
+      "expected_doc_id": "CVE-2001-0051",
+      "poison_doc_id": "POISON-OBEA-q017",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q017",
+        "CVE-2001-0051",
+        "CVE-2001-0052",
+        "CVE-2001-1143",
+        "CVE-2000-0981"
+      ]
+    },
+    {
+      "query_id": "q018",
+      "expected_doc_id": "CVE-2001-0323",
+      "poison_doc_id": "POISON-OBEA-q018",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q018",
+        "CVE-2001-0323",
+        "CVE-2000-0095",
+        "CVE-1999-0431",
+        "CVE-1999-0052"
+      ]
+    },
+    {
+      "query_id": "q019",
+      "expected_doc_id": "CVE-2002-0209",
+      "poison_doc_id": "POISON-OBEA-q019",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q019",
+        "CVE-2002-0209",
+        "CVE-1999-0909",
+        "CVE-2002-0423",
+        "CVE-2001-0448"
+      ]
+    },
+    {
+      "query_id": "q020",
+      "expected_doc_id": "CVE-2000-0967",
+      "poison_doc_id": "POISON-OBEA-q020",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q020",
+        "CVE-2000-0967",
+        "CVE-2002-0717",
+        "CVE-2001-0042",
+        "CVE-2001-1357"
+      ]
+    },
+    {
+      "query_id": "q021",
+      "expected_doc_id": "CVE-2000-0118",
+      "poison_doc_id": "POISON-OBEA-q021",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q021",
+        "CVE-2000-0118",
+        "CVE-1999-0501",
+        "CVE-2000-1189",
+        "CVE-2001-1476"
+      ]
+    },
+    {
+      "query_id": "q022",
+      "expected_doc_id": "CVE-2001-1058",
+      "poison_doc_id": "POISON-OBEA-q022",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q022",
+        "CVE-2001-1058",
+        "CVE-2001-1057",
+        "CVE-2000-0228",
+        "CVE-1999-1054"
+      ]
+    },
+    {
+      "query_id": "q023",
+      "expected_doc_id": "CVE-2001-0686",
+      "poison_doc_id": "POISON-OBEA-q023",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q023",
+        "CVE-2001-0686",
+        "CVE-1999-1438",
+        "CVE-1999-1014",
+        "CVE-2000-0545"
+      ]
+    },
+    {
+      "query_id": "q024",
+      "expected_doc_id": "CVE-2000-1013",
+      "poison_doc_id": "POISON-OBEA-q024",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q024",
+        "CVE-2000-1013",
+        "CVE-2000-1012",
+        "CVE-1999-0964",
+        "CVE-1999-0322"
+      ]
+    },
+    {
+      "query_id": "q025",
+      "expected_doc_id": "CVE-2000-1167",
+      "poison_doc_id": "POISON-OBEA-q025",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q025",
+        "CVE-2000-1167",
+        "CVE-2001-1155",
+        "POISON-OBEA-q094",
+        "CVE-1999-1385"
+      ]
+    },
+    {
+      "query_id": "q026",
+      "expected_doc_id": "CVE-2002-0590",
+      "poison_doc_id": "POISON-OBEA-q026",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q026",
+        "CVE-2002-0590",
+        "CVE-2002-0117",
+        "CVE-2001-0658",
+        "CVE-2002-0330"
+      ]
+    },
+    {
+      "query_id": "q027",
+      "expected_doc_id": "CVE-2001-0336",
+      "poison_doc_id": "POISON-OBEA-q027",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q027",
+        "CVE-2001-0336",
+        "CVE-2001-0337",
+        "CVE-2000-0858",
+        "CVE-2000-0258"
+      ]
+    },
+    {
+      "query_id": "q028",
+      "expected_doc_id": "CVE-2002-0405",
+      "poison_doc_id": "POISON-OBEA-q028",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q028",
+        "CVE-2002-0405",
+        "CVE-2000-1116",
+        "CVE-2001-0794",
+        "CVE-2002-0126"
+      ]
+    },
+    {
+      "query_id": "q029",
+      "expected_doc_id": "CVE-2002-0348",
+      "poison_doc_id": "POISON-OBEA-q029",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q029",
+        "CVE-2002-0348",
+        "CVE-2002-0346",
+        "CVE-2002-0347",
+        "CVE-1999-1530"
+      ]
+    },
+    {
+      "query_id": "q030",
+      "expected_doc_id": "CVE-2001-0821",
+      "poison_doc_id": "POISON-OBEA-q030",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q030",
+        "CVE-2001-0821",
+        "CVE-2002-0492",
+        "POISON-OBEA-q083",
+        "CVE-2001-0210"
+      ]
+    },
+    {
+      "query_id": "q031",
+      "expected_doc_id": "CVE-2001-0773",
+      "poison_doc_id": "POISON-OBEA-q031",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q031",
+        "CVE-2001-0773",
+        "CVE-2000-0418",
+        "CVE-2000-0417",
+        "CVE-2001-1430"
+      ]
+    },
+    {
+      "query_id": "q032",
+      "expected_doc_id": "CVE-2001-1468",
+      "poison_doc_id": "POISON-OBEA-q032",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q032",
+        "CVE-2001-1468",
+        "CVE-2001-1235",
+        "CVE-2001-1297",
+        "CVE-2002-0206"
+      ]
+    },
+    {
+      "query_id": "q033",
+      "expected_doc_id": "CVE-1999-1055",
+      "poison_doc_id": "POISON-OBEA-q033",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q033",
+        "CVE-1999-1055",
+        "CVE-2000-0637",
+        "CVE-2002-0616",
+        "CVE-1999-0717"
+      ]
+    },
+    {
+      "query_id": "q034",
+      "expected_doc_id": "CVE-2001-1581",
+      "poison_doc_id": "POISON-OBEA-q034",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q034",
+        "CVE-2001-1581",
+        "CVE-2001-1542",
+        "CVE-2001-1373",
+        "CVE-2000-1130"
+      ]
+    },
+    {
+      "query_id": "q035",
+      "expected_doc_id": "CVE-2001-0826",
+      "poison_doc_id": "POISON-OBEA-q035",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q035",
+        "CVE-2001-0826",
+        "CVE-2001-0296",
+        "CVE-2001-1021",
+        "CVE-2000-0131"
+      ]
+    },
+    {
+      "query_id": "q036",
+      "expected_doc_id": "CVE-2001-0785",
+      "poison_doc_id": "POISON-OBEA-q036",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q036",
+        "CVE-2001-0785",
+        "CVE-2001-0571",
+        "CVE-1999-1082",
+        "CVE-2001-0205"
+      ]
+    },
+    {
+      "query_id": "q037",
+      "expected_doc_id": "CVE-1999-0973",
+      "poison_doc_id": "POISON-OBEA-q037",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q037",
+        "CVE-1999-0973",
+        "CVE-1999-0974",
+        "CVE-2001-0779",
+        "CVE-1999-0977"
+      ]
+    },
+    {
+      "query_id": "q038",
+      "expected_doc_id": "CVE-2001-1237",
+      "poison_doc_id": "POISON-OBEA-q038",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q038",
+        "CVE-2001-1237",
+        "CVE-2001-1049",
+        "CVE-2001-1235",
+        "CVE-2001-1234"
+      ]
+    },
+    {
+      "query_id": "q039",
+      "expected_doc_id": "CVE-2002-0185",
+      "poison_doc_id": "POISON-OBEA-q039",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q039",
+        "CVE-2002-0185",
+        "CVE-2001-0900",
+        "CVE-2001-0871",
+        "CVE-2001-0844"
+      ]
+    },
+    {
+      "query_id": "q040",
+      "expected_doc_id": "CVE-1999-0872",
+      "poison_doc_id": "POISON-OBEA-q040",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q040",
+        "CVE-1999-0872",
+        "CVE-1999-0297",
+        "CVE-1999-0768",
+        "CVE-2001-0560"
+      ]
+    },
+    {
+      "query_id": "q041",
+      "expected_doc_id": "CVE-1999-1356",
+      "poison_doc_id": "POISON-OBEA-q041",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q041",
+        "CVE-1999-1356",
+        "CVE-1999-0771",
+        "CVE-2001-0728",
+        "CVE-2001-0840"
+      ]
+    },
+    {
+      "query_id": "q042",
+      "expected_doc_id": "CVE-2002-0296",
+      "poison_doc_id": "POISON-OBEA-q042",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q042",
+        "CVE-2002-0296",
+        "CVE-2000-0080",
+        "CVE-2001-0805",
+        "CVE-2000-0154"
+      ]
+    },
+    {
+      "query_id": "q043",
+      "expected_doc_id": "CVE-2001-0361",
+      "poison_doc_id": "POISON-OBEA-q043",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q043",
+        "CVE-2001-0361",
+        "CVE-1999-1085",
+        "POISON-OBEA-q053",
+        "CVE-2002-0640"
+      ]
+    },
+    {
+      "query_id": "q044",
+      "expected_doc_id": "CVE-2000-1005",
+      "poison_doc_id": "POISON-OBEA-q044",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q044",
+        "CVE-2000-1005",
+        "POISON-OBEA-q083",
+        "CVE-2001-0210",
+        "CVE-2000-0921"
+      ]
+    },
+    {
+      "query_id": "q045",
+      "expected_doc_id": "CVE-2001-1424",
+      "poison_doc_id": "POISON-OBEA-q045",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q045",
+        "CVE-2001-1424",
+        "CVE-2001-1426",
+        "CVE-2001-1425",
+        "CVE-2002-0119"
+      ]
+    },
+    {
+      "query_id": "q046",
+      "expected_doc_id": "CVE-2002-0610",
+      "poison_doc_id": "POISON-OBEA-q046",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q046",
+        "CVE-2002-0610",
+        "CVE-1999-1160",
+        "CVE-2001-0293",
+        "CVE-2001-0480"
+      ]
+    },
+    {
+      "query_id": "q047",
+      "expected_doc_id": "CVE-2001-0160",
+      "poison_doc_id": "POISON-OBEA-q047",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q047",
+        "CVE-2001-0160",
+        "CVE-2001-0618",
+        "CVE-2001-0352",
+        "CVE-2001-1221"
+      ]
+    },
+    {
+      "query_id": "q048",
+      "expected_doc_id": "CVE-1999-1258",
+      "poison_doc_id": "POISON-OBEA-q048",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q048",
+        "CVE-1999-1258",
+        "CVE-1999-1467",
+        "CVE-1999-1450",
+        "CVE-1999-0320"
+      ]
+    },
+    {
+      "query_id": "q049",
+      "expected_doc_id": "CVE-1999-1512",
+      "poison_doc_id": "POISON-OBEA-q049",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q049",
+        "CVE-1999-1512",
+        "CVE-2001-0271",
+        "CVE-2000-0971",
+        "CVE-1999-1438"
+      ]
+    },
+    {
+      "query_id": "q050",
+      "expected_doc_id": "CVE-1999-0415",
+      "poison_doc_id": "POISON-OBEA-q050",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q050",
+        "CVE-1999-0415",
+        "CVE-1999-1466",
+        "CVE-1999-0416",
+        "CVE-2001-0537"
+      ]
+    },
+    {
+      "query_id": "q051",
+      "expected_doc_id": "CVE-2002-0447",
+      "poison_doc_id": "POISON-OBEA-q051",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q051",
+        "CVE-2002-0447",
+        "CVE-2001-0189",
+        "CVE-2001-0297",
+        "CVE-2001-0286"
+      ]
+    },
+    {
+      "query_id": "q052",
+      "expected_doc_id": "CVE-2002-0350",
+      "poison_doc_id": "POISON-OBEA-q052",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q052",
+        "CVE-2002-0350",
+        "CVE-1999-1213",
+        "CVE-2000-1063",
+        "CVE-2001-1263"
+      ]
+    },
+    {
+      "query_id": "q053",
+      "expected_doc_id": "CVE-1999-1010",
+      "poison_doc_id": "POISON-OBEA-q053",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q053",
+        "CVE-1999-1010",
+        "POISON-OBEA-q043",
+        "CVE-1999-1085",
+        "CVE-2001-0361"
+      ]
+    },
+    {
+      "query_id": "q054",
+      "expected_doc_id": "CVE-2000-0770",
+      "poison_doc_id": "POISON-OBEA-q054",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q054",
+        "CVE-2000-0770",
+        "CVE-2000-0884",
+        "CVE-2001-0333",
+        "CVE-2000-0408"
+      ]
+    },
+    {
+      "query_id": "q055",
+      "expected_doc_id": "CVE-1999-1507",
+      "poison_doc_id": "POISON-OBEA-q055",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q055",
+        "CVE-1999-1507",
+        "CVE-1999-1212",
+        "CVE-1999-1122",
+        "CVE-1999-1467"
+      ]
+    },
+    {
+      "query_id": "q056",
+      "expected_doc_id": "CVE-2001-0647",
+      "poison_doc_id": "POISON-OBEA-q056",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q056",
+        "CVE-2001-0647",
+        "CVE-2001-0385",
+        "CVE-2001-0558",
+        "CVE-2001-0228"
+      ]
+    },
+    {
+      "query_id": "q057",
+      "expected_doc_id": "CVE-2002-1597",
+      "poison_doc_id": "POISON-OBEA-q057",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q057",
+        "CVE-2002-1597",
+        "CVE-2002-1596",
+        "CVE-2001-1038",
+        "CVE-2002-1595"
+      ]
+    },
+    {
+      "query_id": "q058",
+      "expected_doc_id": "CVE-2001-0476",
+      "poison_doc_id": "POISON-OBEA-q058",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q058",
+        "CVE-2001-0476",
+        "CVE-2001-0291",
+        "CVE-2000-0622",
+        "CVE-2000-1186"
+      ]
+    },
+    {
+      "query_id": "q059",
+      "expected_doc_id": "CVE-2000-1139",
+      "poison_doc_id": "POISON-OBEA-q059",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q059",
+        "CVE-2000-1139",
+        "CVE-2002-0368",
+        "CVE-2001-0504",
+        "CVE-2001-0660"
+      ]
+    },
+    {
+      "query_id": "q060",
+      "expected_doc_id": "CVE-1999-0824",
+      "poison_doc_id": "POISON-OBEA-q060",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q060",
+        "CVE-1999-0824",
+        "CVE-1999-1217",
+        "CVE-1999-1365",
+        "CVE-2000-0197"
+      ]
+    },
+    {
+      "query_id": "q061",
+      "expected_doc_id": "CVE-1999-1110",
+      "poison_doc_id": "POISON-OBEA-q061",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q061",
+        "CVE-1999-1110",
+        "CVE-2001-0148",
+        "POISON-OBEA-q092",
+        "CVE-2000-0400"
+      ]
+    },
+    {
+      "query_id": "q062",
+      "expected_doc_id": "CVE-1999-0347",
+      "poison_doc_id": "POISON-OBEA-q062",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q062",
+        "CVE-1999-0347",
+        "CVE-2001-0339",
+        "CVE-2001-0664",
+        "CVE-1999-0488"
+      ]
+    },
+    {
+      "query_id": "q063",
+      "expected_doc_id": "CVE-2002-0048",
+      "poison_doc_id": "POISON-OBEA-q063",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q063",
+        "CVE-2002-0048",
+        "POISON-OBEA-q035",
+        "POISON-OBEA-q043",
+        "CVE-1999-0473"
+      ]
+    },
+    {
+      "query_id": "q064",
+      "expected_doc_id": "CVE-2002-0177",
+      "poison_doc_id": "POISON-OBEA-q064",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q064",
+        "CVE-2002-0177",
+        "CVE-2001-1230",
+        "CVE-2001-1229",
+        "CVE-2001-1083"
+      ]
+    },
+    {
+      "query_id": "q065",
+      "expected_doc_id": "CVE-2002-0397",
+      "poison_doc_id": "POISON-OBEA-q065",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q065",
+        "CVE-2002-0397",
+        "CVE-2002-0393",
+        "CVE-2002-0394",
+        "CVE-2002-0398"
+      ]
+    },
+    {
+      "query_id": "q066",
+      "expected_doc_id": "CVE-1999-0298",
+      "poison_doc_id": "POISON-OBEA-q066",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q066",
+        "CVE-1999-0298",
+        "CVE-2001-1328",
+        "CVE-2000-1044",
+        "CVE-2000-1041"
+      ]
+    },
+    {
+      "query_id": "q067",
+      "expected_doc_id": "CVE-2002-0076",
+      "poison_doc_id": "POISON-OBEA-q067",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q067",
+        "CVE-2002-0076",
+        "CVE-2000-0327",
+        "CVE-1999-0141",
+        "CVE-2002-0058"
+      ]
+    },
+    {
+      "query_id": "q068",
+      "expected_doc_id": "CVE-2002-0430",
+      "poison_doc_id": "POISON-OBEA-q068",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q068",
+        "CVE-2002-0430",
+        "CVE-1999-1050",
+        "CVE-2001-1204",
+        "CVE-2000-0919"
+      ]
+    },
+    {
+      "query_id": "q069",
+      "expected_doc_id": "CVE-1999-1430",
+      "poison_doc_id": "POISON-OBEA-q069",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q069",
+        "CVE-1999-1430",
+        "CVE-1999-0364",
+        "CVE-1999-1353",
+        "CVE-2000-0654"
+      ]
+    },
+    {
+      "query_id": "q070",
+      "expected_doc_id": "CVE-2001-0441",
+      "poison_doc_id": "POISON-OBEA-q070",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q070",
+        "CVE-2001-0441",
+        "CVE-1999-0102",
+        "CVE-2001-1035",
+        "CVE-2000-0847"
+      ]
+    },
+    {
+      "query_id": "q071",
+      "expected_doc_id": "CVE-1999-1315",
+      "poison_doc_id": "POISON-OBEA-q071",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q071",
+        "CVE-1999-1315",
+        "CVE-1999-1312",
+        "CVE-2001-0845",
+        "CVE-1999-1324"
+      ]
+    },
+    {
+      "query_id": "q072",
+      "expected_doc_id": "CVE-2001-0877",
+      "poison_doc_id": "POISON-OBEA-q072",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q072",
+        "CVE-2001-0877",
+        "CVE-2001-0721",
+        "CVE-2001-0876",
+        "CVE-2001-1552"
+      ]
+    },
+    {
+      "query_id": "q073",
+      "expected_doc_id": "CVE-2001-1216",
+      "poison_doc_id": "POISON-OBEA-q073",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q073",
+        "CVE-2001-1216",
+        "CVE-2002-0559",
+        "CVE-2001-0836",
+        "CVE-1999-1068"
+      ]
+    },
+    {
+      "query_id": "q074",
+      "expected_doc_id": "CVE-2000-0856",
+      "poison_doc_id": "POISON-OBEA-q074",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q074",
+        "CVE-2000-0856",
+        "CVE-2000-0855",
+        "CVE-1999-1290",
+        "CVE-2000-0870"
+      ]
+    },
+    {
+      "query_id": "q075",
+      "expected_doc_id": "CVE-2000-1122",
+      "poison_doc_id": "POISON-OBEA-q075",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q075",
+        "CVE-2000-1122",
+        "CVE-2000-1120",
+        "CVE-2000-1119",
+        "CVE-2000-1123"
+      ]
+    },
+    {
+      "query_id": "q076",
+      "expected_doc_id": "CVE-2001-0396",
+      "poison_doc_id": "POISON-OBEA-q076",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q076",
+        "CVE-2001-0396",
+        "CVE-2001-0395",
+        "CVE-2002-0097",
+        "CVE-1999-0932"
+      ]
+    },
+    {
+      "query_id": "q077",
+      "expected_doc_id": "CVE-2000-0279",
+      "poison_doc_id": "POISON-OBEA-q077",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q077",
+        "CVE-2000-0279",
+        "CVE-2000-0463",
+        "CVE-2000-1150",
+        "CVE-1999-0804"
+      ]
+    },
+    {
+      "query_id": "q078",
+      "expected_doc_id": "CVE-2000-1027",
+      "poison_doc_id": "POISON-OBEA-q078",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q078",
+        "CVE-2000-1027",
+        "CVE-2002-0538",
+        "CVE-1999-0079",
+        "CVE-1999-0017"
+      ]
+    },
+    {
+      "query_id": "q079",
+      "expected_doc_id": "CVE-2001-0006",
+      "poison_doc_id": "POISON-OBEA-q079",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q079",
+        "CVE-2001-0006",
+        "POISON-OBEA-q097",
+        "CVE-1999-0288",
+        "CVE-1999-1387"
+      ]
+    },
+    {
+      "query_id": "q080",
+      "expected_doc_id": "CVE-2001-0993",
+      "poison_doc_id": "POISON-OBEA-q080",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q080",
+        "CVE-2001-0993",
+        "CVE-2001-0710",
+        "CVE-2000-0456",
+        "CVE-2000-0309"
+      ]
+    },
+    {
+      "query_id": "q081",
+      "expected_doc_id": "CVE-2001-0772",
+      "poison_doc_id": "POISON-OBEA-q081",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q081",
+        "CVE-2001-0772",
+        "CVE-2001-0085",
+        "CVE-2002-0585",
+        "CVE-2001-0106"
+      ]
+    },
+    {
+      "query_id": "q082",
+      "expected_doc_id": "CVE-2001-0450",
+      "poison_doc_id": "POISON-OBEA-q082",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q082",
+        "CVE-2001-0450",
+        "CVE-2001-0293",
+        "CVE-2001-0480",
+        "CVE-2002-0558"
+      ]
+    },
+    {
+      "query_id": "q083",
+      "expected_doc_id": "CVE-2001-0210",
+      "poison_doc_id": "POISON-OBEA-q083",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q083",
+        "CVE-2001-0210",
+        "POISON-OBEA-q044",
+        "CVE-2000-0921",
+        "CVE-2000-1005"
+      ]
+    },
+    {
+      "query_id": "q084",
+      "expected_doc_id": "CVE-2002-0105",
+      "poison_doc_id": "POISON-OBEA-q084",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q084",
+        "CVE-2002-0105",
+        "CVE-1999-0689",
+        "CVE-2001-1577",
+        "CVE-1999-1311"
+      ]
+    },
+    {
+      "query_id": "q085",
+      "expected_doc_id": "CVE-1999-0715",
+      "poison_doc_id": "POISON-OBEA-q085",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q085",
+        "CVE-1999-0715",
+        "CVE-2000-1089",
+        "CVE-2002-0366",
+        "CVE-2001-0797"
+      ]
+    },
+    {
+      "query_id": "q086",
+      "expected_doc_id": "CVE-1999-1471",
+      "poison_doc_id": "POISON-OBEA-q086",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q086",
+        "CVE-1999-1471",
+        "CVE-1999-0708",
+        "CVE-1999-1140",
+        "CVE-1999-1458"
+      ]
+    },
+    {
+      "query_id": "q087",
+      "expected_doc_id": "CVE-2001-1100",
+      "poison_doc_id": "POISON-OBEA-q087",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q087",
+        "CVE-2001-1100",
+        "CVE-2001-0024",
+        "CVE-2001-0271",
+        "CVE-2001-0180"
+      ]
+    },
+    {
+      "query_id": "q088",
+      "expected_doc_id": "CVE-1999-1109",
+      "poison_doc_id": "POISON-OBEA-q088",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q088",
+        "CVE-1999-1109",
+        "CVE-1999-0393",
+        "CVE-1999-0205",
+        "CVE-1999-0684"
+      ]
+    },
+    {
+      "query_id": "q089",
+      "expected_doc_id": "CVE-1999-0723",
+      "poison_doc_id": "POISON-OBEA-q089",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q089",
+        "CVE-1999-0723",
+        "CVE-1999-0229",
+        "POISON-OBEA-q097",
+        "CVE-2001-1288"
+      ]
+    },
+    {
+      "query_id": "q090",
+      "expected_doc_id": "CVE-2001-0947",
+      "poison_doc_id": "POISON-OBEA-q090",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q090",
+        "CVE-2001-0947",
+        "CVE-2001-0949",
+        "CVE-2001-0948",
+        "CVE-2000-0710"
+      ]
+    },
+    {
+      "query_id": "q091",
+      "expected_doc_id": "CVE-2001-1124",
+      "poison_doc_id": "POISON-OBEA-q091",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q091",
+        "CVE-2001-1124",
+        "CVE-2002-0039",
+        "CVE-1999-0461",
+        "CVE-1999-0213"
+      ]
+    },
+    {
+      "query_id": "q092",
+      "expected_doc_id": "CVE-2002-0372",
+      "poison_doc_id": "POISON-OBEA-q092",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q092",
+        "CVE-2002-0372",
+        "POISON-OBEA-q061",
+        "CVE-2001-0148",
+        "CVE-2001-0243"
+      ]
+    },
+    {
+      "query_id": "q093",
+      "expected_doc_id": "CVE-2000-0410",
+      "poison_doc_id": "POISON-OBEA-q093",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q093",
+        "CVE-2000-0410",
+        "CVE-2000-0057",
+        "CVE-2001-1427",
+        "CVE-2001-1120"
+      ]
+    },
+    {
+      "query_id": "q094",
+      "expected_doc_id": "CVE-2000-0916",
+      "poison_doc_id": "POISON-OBEA-q094",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q094",
+        "CVE-2000-0916",
+        "CVE-2000-0489",
+        "CVE-1999-0796",
+        "CVE-2001-1155"
+      ]
+    },
+    {
+      "query_id": "q095",
+      "expected_doc_id": "CVE-1999-1383",
+      "poison_doc_id": "POISON-OBEA-q095",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q095",
+        "CVE-1999-1383",
+        "CVE-1999-1048",
+        "CVE-2001-0212",
+        "CVE-1999-0978"
+      ]
+    },
+    {
+      "query_id": "q096",
+      "expected_doc_id": "CVE-2002-0325",
+      "poison_doc_id": "POISON-OBEA-q096",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q096",
+        "CVE-2002-0325",
+        "CVE-2001-0368",
+        "CVE-1999-1082",
+        "CVE-2001-0297"
+      ]
+    },
+    {
+      "query_id": "q097",
+      "expected_doc_id": "CVE-1999-1360",
+      "poison_doc_id": "POISON-OBEA-q097",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q097",
+        "CVE-1999-1360",
+        "CVE-1999-1364",
+        "CVE-2001-1122",
+        "CVE-1999-1387"
+      ]
+    },
+    {
+      "query_id": "q098",
+      "expected_doc_id": "CVE-2000-0182",
+      "poison_doc_id": "POISON-OBEA-q098",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q098",
+        "CVE-2000-0182",
+        "CVE-2001-0252",
+        "CVE-2001-0431",
+        "CVE-2001-0327"
+      ]
+    },
+    {
+      "query_id": "q099",
+      "expected_doc_id": "CVE-2001-0976",
+      "poison_doc_id": "POISON-OBEA-q099",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q099",
+        "CVE-2001-0976",
+        "CVE-1999-0423",
+        "CVE-1999-1161",
+        "CVE-2001-0266"
+      ]
+    },
+    {
+      "query_id": "q100",
+      "expected_doc_id": "CVE-2001-0003",
+      "poison_doc_id": "POISON-OBEA-q100",
+      "poison_rank": 1,
+      "legitimate_rank": 2,
+      "retrieved_doc_ids": [
+        "POISON-OBEA-q100",
+        "CVE-2001-0003",
+        "CVE-2000-0834",
+        "CVE-2002-0419",
+        "CVE-2002-0190"
+      ]
+    }
+  ]
+}
