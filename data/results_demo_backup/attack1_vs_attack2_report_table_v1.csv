@@ -1,0 +1,8 @@
+metric,semantic_mimicry,optimized_embedding,absolute_change
+Poison Top-5 ASR (%),95.0,100.0,5.0
+Poison Rank-1 ASR (%),80.0,100.0,20.0
+Poison Beats Legitimate (%),80.0,100.0,20.0
+Legitimate Top-5 Recall (%),100.0,100.0,0.0
+Legitimate MRR,0.566667,0.479167,-0.0875
+Mean Legitimate Rank,1.9,2.15,0.25
+Mean Poison Rank,1.1579,1.0,-0.1579

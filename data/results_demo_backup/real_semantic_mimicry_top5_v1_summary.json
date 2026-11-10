@@ -1,0 +1,20 @@
+{
+  "benchmark": "data\\benchmark\\real_trigger_queries_v1.jsonl",
+  "attack_file": "data\\poisoned\\semantic_mimicry_real.jsonl",
+  "queries": 20,
+  "top_k": 5,
+  "poison_top5_hits": 19,
+  "poison_top5_asr": 0.95,
+  "poison_rank1_hits": 16,
+  "poison_rank1_asr": 0.8,
+  "poison_beats_legitimate_hits": 16,
+  "poison_beats_legitimate_rate": 0.8,
+  "legitimate_top5_hits": 20,
+  "legitimate_top5_recall": 1.0,
+  "legitimate_mrr_after_poisoning": 0.5666666666666667,
+  "clean_reference": {
+    "top5_recall": 1.0,
+    "rank1_accuracy": 0.95,
+    "mrr": 0.9666666666666668
+  }
+}

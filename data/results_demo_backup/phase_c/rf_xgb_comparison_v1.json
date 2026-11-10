@@ -1,0 +1,205 @@
+{
+  "schema": "phase_c_rf_xgb_comparison_v1",
+  "comparison_protocol": "identical frozen grouped train/test split, identical 12 numerical features, identical training-only SMOTE; original Subash XGBoost hyperparameters",
+  "seed": 42,
+  "dataset_csv": "data/results/phase_c/combined_features_v1.csv",
+  "dataset_sha256": "d4f0aeb73eb6236c9de15780b571ff3f088d2f7761b0af617f9f7b6f932fe0bf",
+  "split_manifest": "data/results/phase_c/split_manifest_v1.json",
+  "split_manifest_sha256": "349aec00334a341509fb69cb9b157495a7b36f27a379eb11c6e45a8880db0343",
+  "train_rows_original": 416,
+  "train_rows_after_smote": 478,
+  "test_rows_untouched": 137,
+  "training_class_counts_original": {
+    "0": 239,
+    "1": 177
+  },
+  "training_class_counts_after_smote": {
+    "0": 239,
+    "1": 239
+  },
+  "test_class_counts": {
+    "0": 77,
+    "1": 60
+  },
+  "feature_columns": [
+    "embedding_dist_from_centroid",
+    "embedding_dist_from_nearest_neighbor",
+    "text_length_chars",
+    "text_length_words",
+    "avg_word_length",
+    "char_entropy",
+    "digit_ratio",
+    "punctuation_ratio",
+    "retrieval_score_mean",
+    "retrieval_score_max",
+    "retrieval_score_zscore",
+    "retrieval_appearance_count"
+  ],
+  "model_parameters": {
+    "random_forest": {
+      "n_estimators": 300,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "xgboost": {
+      "n_estimators": 300,
+      "max_depth": 5,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "eval_metric": "logloss",
+      "random_state": 42,
+      "n_jobs": -1
+    }
+  },
+  "metrics": {
+    "random_forest": {
+      "precision": 1.0,
+      "recall": 0.9666666666666667,
+      "f1": 0.9830508474576272,
+      "accuracy_secondary": 0.9854014598540146,
+      "roc_auc": 1.0,
+      "average_precision": 1.0,
+      "confusion_matrix_TN_FP_FN_TP": [
+        [
+          77,
+          0
+        ],
+        [
+          2,
+          58
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9746835443037974,
+          "recall": 1.0,
+          "f1-score": 0.9871794871794872,
+          "support": 77.0
+        },
+        "1": {
+          "precision": 1.0,
+          "recall": 0.9666666666666667,
+          "f1-score": 0.9830508474576272,
+          "support": 60.0
+        },
+        "accuracy": 0.9854014598540146,
+        "macro avg": {
+          "precision": 0.9873417721518987,
+          "recall": 0.9833333333333334,
+          "f1-score": 0.9851151673185572,
+          "support": 137.0
+        },
+        "weighted avg": {
+          "precision": 0.9857710431488497,
+          "recall": 0.9854014598540146,
+          "f1-score": 0.9853713237976508,
+          "support": 137.0
+        }
+      },
+      "by_poison_attack": {
+        "sm": {
+          "poison_count": 20,
+          "detected_as_poison": 20,
+          "recall": 1.0
+        },
+        "obea": {
+          "poison_count": 20,
+          "detected_as_poison": 20,
+          "recall": 1.0
+        },
+        "rpi": {
+          "poison_count": 20,
+          "detected_as_poison": 18,
+          "recall": 0.9
+        }
+      },
+      "clean_false_positives": 0,
+      "clean_false_positive_rate": 0.0
+    },
+    "xgboost": {
+      "precision": 0.9830508474576272,
+      "recall": 0.9666666666666667,
+      "f1": 0.9747899159663865,
+      "accuracy_secondary": 0.9781021897810219,
+      "roc_auc": 0.9984848484848485,
+      "average_precision": 0.9981518817204301,
+      "confusion_matrix_TN_FP_FN_TP": [
+        [
+          76,
+          1
+        ],
+        [
+          2,
+          58
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9743589743589743,
+          "recall": 0.987012987012987,
+          "f1-score": 0.9806451612903225,
+          "support": 77.0
+        },
+        "1": {
+          "precision": 0.9830508474576272,
+          "recall": 0.9666666666666667,
+          "f1-score": 0.9747899159663865,
+          "support": 60.0
+        },
+        "accuracy": 0.9781021897810219,
+        "macro avg": {
+          "precision": 0.9787049109083008,
+          "recall": 0.9768398268398268,
+          "f1-score": 0.9777175386283545,
+          "support": 137.0
+        },
+        "weighted avg": {
+          "precision": 0.9781656341102092,
+          "recall": 0.9781021897810219,
+          "f1-score": 0.9780808202725403,
+          "support": 137.0
+        }
+      },
+      "by_poison_attack": {
+        "sm": {
+          "poison_count": 20,
+          "detected_as_poison": 20,
+          "recall": 1.0
+        },
+        "obea": {
+          "poison_count": 20,
+          "detected_as_poison": 20,
+          "recall": 1.0
+        },
+        "rpi": {
+          "poison_count": 20,
+          "detected_as_poison": 18,
+          "recall": 0.9
+        }
+      },
+      "clean_false_positives": 1,
+      "clean_false_positive_rate": 0.012987012987012988
+    }
+  },
+  "model_artifacts": {
+    "random_forest": "data/results/phase_c/random_forest_model_v1.joblib",
+    "xgboost": "data/results/phase_c/xgboost_comparison_model_v1.joblib"
+  },
+  "predictions_csv": "data/results/phase_c/rf_xgb_test_predictions_v1.csv",
+  "limitations": [
+    "553-row combined dataset aggregates 3 individual 20%-ratio experiments; it is not itself a single live 20%-poisoned collection",
+    "Feature engineering uses transductive centroid and nearest-neighbor statistics over all 553 rows; test features are not strictly inductive",
+    "Frozen query-benchmark retrieval scores are transductive; test target-query groups are nevertheless disjoint from train target groups",
+    "Synthetic controlled poison documents have distinguishing writing styles and source annotations; avoid deployment-level generalization claims",
+    "This does not evaluate 1%, 5%, 10% ratio-specific defense generalization",
+    "Both models trained on synthetic 20%-ratio attack variants; test labels are based on constructed controlled corpus",
+    "Random Forest / XGBoost classification scores do not themselves demonstrate live RAG pipeline mitigation",
+    "Original XGBoost teammate training script and data are not modified by this isolated comparison"
+  ],
+  "sha256": {
+    "rf_model": "6ae65ec43c1a43bb5a699ca473764ca8eb60ac6b13944ece406b385001d2bea1",
+    "xgb_model": "7eef7cee86aba076331ebd3effbe50c1e491813ea0a00d145ee91e7a984f0369",
+    "predictions_csv": "e3988ea7ad19ee0c75c98491126aae0fd1a5a3f8ff5c1f98bb8e8f4ca1553b94"
+  }
+}

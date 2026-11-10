@@ -1,0 +1,28 @@
+{
+  "dataset_rows": 5300,
+  "clean_rows": 5000,
+  "poison_rows": 300,
+  "features": [
+    "embedding_dist_from_centroid",
+    "embedding_dist_from_nearest_neighbor",
+    "text_length_chars",
+    "text_length_words",
+    "avg_word_length",
+    "char_entropy",
+    "digit_ratio",
+    "punctuation_ratio",
+    "retrieval_score_mean",
+    "retrieval_score_max",
+    "retrieval_score_zscore",
+    "retrieval_appearance_count"
+  ],
+  "collections": {
+    "clean": "poisonbench_ieee_5000_clean",
+    "sm": "poisonbench_ieee_5000_sm",
+    "obea": "poisonbench_ieee_5000_obea",
+    "rpi": "poisonbench_ieee_5000_rpi"
+  },
+  "retrieval_top_k": 5,
+  "transductive_features": true,
+  "notes": "Controlled in-corpus classification; not independent-corpus generalization."
+}
