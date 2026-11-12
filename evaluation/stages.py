@@ -236,6 +236,13 @@ def build_stages(config, d4_model=None) -> list:
             ))
         elif name == "d3":
             stages.append(D3Stage(flag_below=params.get("d3_flag_below", 1.0)))
+        elif name == "d1c":
+            from evaluation.reference import CorpusD1Stage
+            stages.append(CorpusD1Stage(soft_z=params.get("d1c_soft_z", 1.5),
+                                        hard_z=params.get("d1c_hard_z")))
+        elif name == "ref":
+            from evaluation.reference import RegistryStage
+            stages.append(RegistryStage())
         elif name == "d4":
             d4 = D4Stage(d4_model, threshold=params.get("d4_threshold", 0.5))
             if config.use_router:

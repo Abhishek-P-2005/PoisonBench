@@ -27,6 +27,7 @@ from evaluation.config import CONTEXT_SIZE, N_RETRIEVE, STAGE_NAMES, make_config
 from evaluation.metadata_bridge import enrich_metadata, has_canonical_provenance
 from evaluation.metrics import evaluate_query
 from evaluation.pipeline import DefensePipeline
+from evaluation.reference import get_reference
 from evaluation.runner import truth_map
 from evaluation.scenarios import ScenarioQuery
 from evaluation.stages import build_stages
@@ -48,6 +49,10 @@ def load_d4(kind: str):
     if kind in ("", "none"):
         return None, "D4_MODEL is 'none'"
     try:
+        if kind.startswith("ieee_"):
+            # six-feature models trained on the 5,000-record corpus (evaluation/ieee5000_d4.py)
+            from evaluation.ieee5000_d4 import load_ieee_text_model
+            return load_ieee_text_model(kind[len("ieee_"):]), None
         from evaluation.d4_live_text import load_live_text_model
         return load_live_text_model(kind), None
     except Exception as exc:  # missing file, checksum mismatch, missing xgboost, ...
@@ -115,6 +120,8 @@ def plan_pipeline(stages, use_router: bool, mode: str, d4_kind: str):
     for name in requested:
         if name in ("d2", "d3") and mode == "thin":
             skipped.append({"stage": name, "reason": "collection has no provenance metadata and provenance mode is 'thin'"})
+        elif name in ("d1c", "ref") and get_reference() is None:
+            skipped.append({"stage": name, "reason": "no corpus reference loaded (evaluation/reference.py)"})
         elif name == "d4" and d4_model is None:
             skipped.append({"stage": name, "reason": f"no Defense 4 model available ({d4_reason})"})
         else:
@@ -242,6 +249,23 @@ def run_defended(
     return response
 
 
+CLEAN_REFERENCE_COLLECTION = "poisonbench_ieee_5000_clean"
+
+
+def _ensure_reference(stages) -> None:
+    """Load the corpus reference once if the request names d1c or ref (reads the clean collection)."""
+    if not stages or not ({"d1c", "ref"} & set(stages)) or get_reference() is not None:
+        return
+    try:
+        from api.pipeline.vectorstore import get_client
+        from evaluation.reference import CorpusReference, set_reference
+        from api.pipeline.embedding import embed_texts
+        set_reference(CorpusReference.from_collection(get_client().get_collection(CLEAN_REFERENCE_COLLECTION),
+                                                      embed=embed_texts))
+    except Exception as exc:   # collection missing, Chroma down: the stage is reported as skipped
+        log.warning("could not build corpus reference from %s: %s", CLEAN_REFERENCE_COLLECTION, exc)
+
+
 def defended_retrieve(
     query_text: str,
     n_retrieve: int = N_RETRIEVE,
@@ -250,6 +274,7 @@ def defended_retrieve(
 ) -> dict:
     """Retrieve from Chroma (with embeddings), then run_defended()."""
     from api.pipeline.vectorstore import query_candidates   # lazy: needs chromadb + MiniLM
+    _ensure_reference(kwargs.get("stages"))
     candidates = query_candidates(query_text, n_results=n_retrieve, collection_name=collection)
     return run_defended(query_text, candidates, **kwargs)
 

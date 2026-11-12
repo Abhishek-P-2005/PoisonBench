@@ -25,7 +25,9 @@ FPR_CEILING = 0.05     # PRD v2.0 Req 1.3
 # Static overhead limit from PRD v2.0 NFRs (milliseconds per query batch).
 STATIC_OVERHEAD_LIMIT_MS = 150.0
 
-STAGE_NAMES = ("d1", "d2", "d3", "d4")
+# d1..d4 are the four defenses. d1c and ref are corpus-reference baselines
+# (evaluation/reference.py) that need a reference set with reference.set_reference().
+STAGE_NAMES = ("d1", "d2", "d3", "d4", "d1c", "ref")
 
 
 @dataclass
@@ -34,7 +36,8 @@ class DefenseConfig:
     stages          : stage names in execution order, e.g. ("d1", "d2", "d3")
     params          : optional overrides, keys used by the stages:
                         d1_soft_z, d1_hard_z, d2_alpha, d2_flag_threshold,
-                        d2_drop_low_trust, d3_flag_below, d4_threshold
+                        d2_drop_low_trust, d3_flag_below, d4_threshold,
+                        d1c_soft_z, d1c_hard_z
     use_router      : gate the d4 stage with the Module 5 adaptive router
     router_threshold: risk threshold for the router (None = config default)
     """
