@@ -1,0 +1,17 @@
+tier,attack,defense,auc,n_clean,n_poison
+spoofed,injection,d1,0.5345,200,20
+spoofed,injection,d2,1.0,200,20
+spoofed,injection,d3,1.0,200,20
+spoofed,injection,d4,0.04875,200,20
+spoofed,naive,d1,0.20772727272727273,200,22
+spoofed,naive,d2,1.0,200,22
+spoofed,naive,d3,1.0,200,22
+spoofed,naive,d4,0.32306818181818187,200,22
+spoofed,optimized,d1,0.2956521739130435,200,23
+spoofed,optimized,d2,1.0,200,23
+spoofed,optimized,d3,1.0,200,23
+spoofed,optimized,d4,0.37119565217391304,200,23
+spoofed,all,d1,0.3393846153846154,200,65
+spoofed,all,d2,1.0,200,65
+spoofed,all,d3,1.0,200,65
+spoofed,all,d4,0.2556923076923077,200,65
